@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="TitleTexts" format="color"/>
+    <attr name="SecondaryTexts" format="color"/>
+
+    <attr name="UserBackground" format="color"/>
+    <attr name="UserLineStroke" format="color"/>
+    <attr name="ShapeBackground" format="color" />
+    <attr name="backgroundColor" format="color" />
+    <attr name="ShowTitle" format="color"/>
+    <attr name="ShowSecondary" format="color"/>
+    <attr name="ShowShape" format="color"/>
+    <attr name="ShowBackground" format="color"/>
+    <attr name="RippleItemColor" format="color"/>
+    
+    <attr name="toolbarPopupTheme" format="reference"/>
+</resources>

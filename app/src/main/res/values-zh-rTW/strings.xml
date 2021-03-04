@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_network_error_title">網絡連接超時</string>
+    <string name="home_network_error">嘗試換個網絡，或稍後再試</string>
+    <string name="home_network_no_title">無法連接網絡</string>
+    <string name="home_network_no">請檢查網絡是否打開</string>
+    <string name="home_network_retry">重試</string>
+    <string name="action_search">搜索</string>
+    <string name="search_relevant">熱門</string>
+    <string name="search_latest">近期</string>
+    <string name="search_hint">搜索照片</string>
+    <string name="search_result">\t\t%d 個相關搜索結果\t\t</string>
+    <string name="search_fail">蒐索失敗，網絡連接超時</string>
+    <string name="search_no_result">沒有搜索結果</string>
+    <string name="search_tips">使用英文搜索更全面</string>
+    <string name="show_location">未知的拍攝地點</string>
+    <string name="show_download">下載</string>
+    <string name="show_per_storage">沒有存儲許可權，無法下載</string>
+    <string name="show_per_channel">通知通路被關閉，無法下載</string>
+    <string name="show_per_notify">沒有通知欄許可權，無法下載</string>
+    <string name="show_per_track">正在連接網絡，請稍後</string>
+    <string name="show_url_error">當前檔案不可下載</string>
+    <string name="show_per_start">開始下載</string>
+    <string name="show_snackbar_permission">開啟許可權</string>
+    <string name="notify_down_title">正在下載</string>
+    <string name="notify_down_name">拍攝的照片</string>
+    <string name="notify_over_title">下載成功</string>
+    <string name="notify_error_title">下載失敗，網絡連接錯誤</string>
+    <string name="notify_cancel_title">下載任務被取消</string>
+    <string name="user_location">未知的攝影師國籍</string>
+    <string name="user_bio">個人經歷</string>
+    <string name="user_photos">共拍攝了 %d 張照片</string>
+    <string name="user_only">這位攝影師只有這一張照片</string>
+    <string name="set_preview">預覽</string>
+    <string name="set_hd">高清</string>
+    <string name="set_fluent">流暢</string>
+    <string name="set_download">下載</string>
+    <string name="set_raw">原圖</string>
+    <string name="set_full">4K 超高清</string>
+    <string name="set_regular">1080P</string>
+    <string name="set_load">預載</string>
+    <string name="set_collection">館藏</string>
+    <string name="set_popular">熱門</string>
+    <string name="set_newest">最新</string>
+    <string name="set_style">主題</string>
+    <string name="set_light">明亮</string>
+    <string name="set_dark">暗黑</string>
+    <string name="set_language">語言</string>
+    <string name="set_follow">跟隨系統</string>
+    <string name="set_ok">確定</string>
+    <string name="set_restart">重啓 App 後生效</string>
+    <string name="set_already">已生效</string>
+    <string name="about_log">更新日誌</string>
+    <string name="menu_set">設定</string>
+    <string name="menu_about">關於</string>
+    <string name="about_version">當前版本：1.2.1</string>
+    <string name="about_log_text">版本：1.2.1（2020年10月11日）\n修復：安卓6.0-7.0無法下載的問題\n修復：設定介面文字顯示錯誤\n優化：部分程式碼\n\n版本：1.2.0（2020年6月28日）\n新增：蒐索過濾\n新增：下拉重載\n新增：圖片預覽手勢縮放\n優化：“蒐索”頁面\n優化：“關於”頁面\n優化：覈心體驗\n修復：已知Bug
+        \n\n版本：1.1.8（2020年6月9日）\n新增：語言選擇\n新增：繁體中文和日語\n新增：暗黑模式\n新增：下載完成後點擊查看圖片\n修復：部分系統下申請許可權時發生异常導致崩潰\n優化：設定UI\n優化：適配暗黑模式調整配色\n優化：蒐索頁使用體驗\n優化：攝影師主頁細節
+        \n\n版本：1.1.3（2020年6月3日）\n\新增：攝影師個人主頁\n新增：過渡動畫\n優化：UI配色\n優化：UI佈局\n優化：部分業務邏輯
+        \n\n版本：1.0.7（2020年5月29日）\n修復：廣播錯誤導致的無法通知系統更新相册\n修復：下載時連接失敗導致的异常捕獲錯誤\n優化：通知欄内容\n優化：狀態列顯示</string>
+    <string name="about_libraries">開源庫</string>
+    <string name="about_developer">開發者</string>
+    <string name="about_developer_web">訪問網頁</string>
+    <string name="about_developer_email_text">發送錯誤報告，提議應用建議</string>
+    <string name="about_developer_reward">打賞</string>
+    <string name="about_developer_reward_wechatpay">微信支付</string>
+    <string name="about_developer_reward_text">喜歡請一鍵三連哦( •̀ ω •́ )✧</string>
+    <string name="about_email_error">無法打開E-mail App，請手動發送</string>
+    <string name="about_browser_error">無法打開瀏覽器</string>
+    <string name="about_send_email_text">迴響內容</string>
+    <string name="about_send_email_title">迴響標題</string>
+
+    <string name="describe_show_image">預覽照片</string>
+    <string name="describe_show_head">攝影師頭像</string>
+    <string name="describe_show_location">位置圖標</string>
+    <string name="describe_set_preview">預覽設定</string>
+    <string name="describe_set_download">下載設定</string>
+    <string name="describe_set_load">加載設定</string>
+    <string name="describe_logo">圖標</string>
+    <string name="describe_icon">圖標</string>
+    <string name="describe_background">背景</string>
+</resources>

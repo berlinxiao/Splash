@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_network_error_title">ネットワーク接続タイムアウト</string>
+    <string name="home_network_error">ネットワークを変えてみますか、後で試してみます</string>
+    <string name="home_network_no_title">ネットワークに接続できませんでした</string>
+    <string name="home_network_no">ネットワークが開くかどうか確認してください</string>
+    <string name="home_network_retry">再試行</string>
+    <string name="search_no_result">検索結果がありません</string>
+    <string name="action_search">検索</string>
+    <string name="search_relevant">人気がある</string>
+    <string name="search_latest">近いうちに</string>
+    <string name="search_result">\t\t%d つの関連検索結果\t\t</string>
+    <string name="search_fail">検索に失敗しました、ネットワーク接続がタイムアウトしました</string>
+    <string name="search_tips">英語で検索したほうが全面的です</string>
+    <string name="search_hint">写真を検索</string>
+    <string name="show_location">未知の撮影場所</string>
+    <string name="show_download">画像を保存</string>
+    <string name="show_per_storage">保存権限がありません、ダウンロードできません</string>
+    <string name="show_per_notify">通知権限がありません、ダウンロードできません</string>
+    <string name="show_per_channel">通知ルートが閉鎖されました、ダウンロードできません</string>
+    <string name="show_per_track">インターネットに接続しています、しばらくお待ちください</string>
+    <string name="show_url_error">現在のファイルはダウンロードできません</string>
+    <string name="show_per_start">ダウンロードを開始</string>
+    <string name="show_snackbar_permission">パーミッションを開く</string>
+    <string name="notify_down_title">ダウンロード中</string>
+    <string name="notify_down_name">撮った写真</string>
+    <string name="notify_over_title">ダウンロード成功</string>
+    <string name="notify_error_title">ダウンロード失敗、ネットワーク接続エラー</string>
+    <string name="notify_cancel_title">ダウンロードジョブがキャンセルされました</string>
+    <string name="user_location">未知のカメラマン国籍</string>
+    <string name="user_bio">個人の経歴</string>
+    <string name="user_photos">全部で %d 枚の写真を撮りました</string>
+    <string name="user_only">この写真家はこの一枚だけです</string>
+    <string name="set_preview">プレビュー</string>
+    <string name="set_hd">ハイビジョン</string>
+    <string name="set_fluent">滑らかである</string>
+    <string name="set_download">ダウンロード</string>
+    <string name="set_raw">原図</string>
+    <string name="set_full">4K ハイビジョン</string>
+    <string name="set_regular">1080P</string>
+    <string name="set_load">前に載せる</string>
+    <string name="set_collection">料理屋の蔵</string>
+    <string name="set_popular">人気がある</string>
+    <string name="set_newest">最新</string>
+    <string name="set_style">テーマ</string>
+    <string name="set_light">明るい</string>
+    <string name="set_dark">暗黒</string>
+    <string name="set_language">言語</string>
+    <string name="set_follow">システムに従う</string>
+    <string name="set_ok">確認</string>
+    <string name="set_restart">アプリを再起動したら有効です</string>
+    <string name="set_already">今はもう効力があります</string>
+    <string name="about_version">現在のバージョン:1.2.1</string>
+    <string name="about_log">ログを更新</string>
+    <string name="menu_set">設定</string>
+    <string name="menu_about">について</string>
+    <string name="describe_show_image">写真のプレビュー</string>
+    <string name="describe_show_head">写真家の写真</string>
+    <string name="describe_show_location">位置アイコン</string>
+    <string name="describe_set_preview">プレビューの設定</string>
+    <string name="describe_set_download">ダウンロードの設定</string>
+    <string name="describe_set_load">設定を読み込み</string>
+    <string name="describe_logo">アイコン</string>
+    <string name="describe_background">背景</string>
+    <string name="describe_icon">アイコン</string>
+    <string name="about_log_text">バージョン：1.2.1（2020年10月11日）\n修復：Android 6.0-7.0ダウンロードできない問題\n修復：インターフェイス文字表示エラーを設定します\n最適化：部分コード\n\nバージョン：1.2.0（2020年6月28日）\n追加：検索フィルタ\n追加：ドロップダウンリフレッシュ\n追加：写真プレビュージェスチャーのスケーリング\n最適化：「検索」ページ\n最適化：「について」ページ\n最適化：コア体験\n修復：既知のBug
+        \n\nバージョン：1.1.8（2020年6月9日）\n追加：言語選択\n追加：繁体中国語和日本語\n追加：ダークモード\n追加：ダウンロードが完了したら画像をクリックしてください\n修復：一部のシステムで権限申請時に異常が発生し崩壊しました\n最適化：UIの設定\n最適化：ダークモードに適合した配色調整\n最適化：検索ページ使用体験\n最適化：写真家ホームページの詳細
+        \n\nバージョン：1.1.3（2020年6月3日）\n新規：カメラマン個人ホームページ\n追加：移行動画\n最適化：UIの色付け\n最適化：UIレイアウト\n最適化：一部の業務ロジック
+        \n\nバージョン：1.0.7（2020年5月29日）\n修復：放送エラーによるアルバム更新のお知らせができませんでした。\n修復：ダウンロード時の接続失敗による異常な捕獲エラー\n最適化：通知バーのプロパティ\n最適化：ステータスバーの表示</string>
+
+    <string name="about_libraries">ソースライブラリ</string>
+    <string name="about_developer">開発者</string>
+    <string name="about_developer_web">ホームページにアクセス</string>
+    <string name="about_developer_email_text">バグレポートを送り、アプリケーションの提案をします</string>
+    <string name="about_developer_reward">賞品を与える</string>
+    <string name="about_developer_reward_wechatpay">WeChatで支払う</string>
+    <string name="about_developer_reward_text">Splashアプリのような？報酬をください</string>
+    <string name="about_email_error">開けませんでしたE-mail App、手動で送信してください</string>
+    <string name="about_browser_error">ブラウザを開けませんでした</string>
+    <string name="about_send_email_text">フィードバックの内容</string>
+    <string name="about_send_email_title">フィードバックのタイトル</string>
+
+</resources>

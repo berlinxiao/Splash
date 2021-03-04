@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="192dp"
+    android:layout_gravity="center"
+    android:layout_margin="8dp"
+    android:background="@drawable/ripple_fillet_item_set"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/item_set_icon_back"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:contentDescription="@string/describe_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        app:srcCompat="@drawable/shape_fillet_white2" />
+
+    <ImageView
+        android:id="@+id/item_set_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/describe_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/item_set_icon_back"
+        app:layout_constraintEnd_toEndOf="@+id/item_set_icon_back"
+        app:layout_constraintStart_toStartOf="@+id/item_set_icon_back"
+        app:layout_constraintTop_toTopOf="@+id/item_set_icon_back"
+        app:srcCompat="@drawable/ic_set_preview" />
+
+    <TextView
+        android:id="@+id/item_set_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/menu_set"
+        android:textColor="?attr/TitleTexts"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_set_icon_back" />
+
+    <TextView
+        android:id="@+id/item_set_textView_status"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/menu_set"
+        android:textColor="?attr/SecondaryTexts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_set_textView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

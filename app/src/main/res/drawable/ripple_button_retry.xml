@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#006aff">
+    <item>
+        <shape android:shape="rectangle">
+            <!-- 圆角正常按钮 -->
+            <corners android:radius="40dp" />
+            <!-- 填充的颜色 -->
+            <solid android:color="#007fff" />
+        </shape>
+    </item>
+</ripple>

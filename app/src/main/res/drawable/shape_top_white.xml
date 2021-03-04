@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+    android:radius 圆角的半径
+    设置底部两个角为圆角
+    -->
+    <corners
+        android:bottomLeftRadius="0dp"
+        android:bottomRightRadius="0dp"
+        android:topLeftRadius="25dp"
+        android:topRightRadius="25dp" />
+    <!-- 填充的颜色 -->
+    <solid android:color="?attr/ShowShape" />
+</shape>

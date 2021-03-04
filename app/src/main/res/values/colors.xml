@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorMyWhite">#f9fafb</color>
+    <color name="colorMyBlack">#0b0b0c</color>
+    <color name="colorMyBlue">#007fff</color>
+    <color name="colorMyBlue2">#cce6ff</color>
+    <color name="colorGradientOverlay">#44000000</color>
+
+    <color name="colorMaterialLightGray">#202021</color>
+    <color name="colorMaterialLightGray2">#414142</color>
+    <color name="colorMaterialLightGray3">#5f6061</color>
+    <color name="colorMaterialLightGray4">#737475</color>
+    <color name="colorMaterialLightGray5">#9c9d9e</color>
+    <color name="colorMaterialLightGray6">#bbbcbd</color>
+    <color name="colorMaterialLightGray7">#dedfe0</color>
+    <color name="colorMaterialLightGray8">#edeeef</color>
+    <color name="colorMaterialLightGray9">#f4f5f6</color>
+    <color name="colorMaterialDarkGray">#2c2c2d</color>
+    <color name="colorMaterialDarkGray2">#4a4a4b</color>
+    <color name="colorMaterialDarkGray3">#5d5d5d</color>
+    <color name="colorMaterialDarkGray4">#838384</color>
+    <color name="colorMaterialDarkGray5">#a5a5a6</color>
+    <color name="colorMaterialDarkGray6">#cacacb</color>
+    <color name="colorMaterialDarkGray7">#dededf</color>
+    <color name="colorMaterialDarkGray8">#ececec</color>
+
+    <color name="colorAppleGray">#8e8e93</color>
+    <color name="colorAppleLightGray2">#aeaeb2</color>
+    <color name="colorAppleLightGray3">#c7c7cc</color>
+    <color name="colorAppleLightGray4">#d1d1d6</color>
+    <color name="colorAppleLightGray5">#e5e5ea</color>
+    <color name="colorAppleLightGray6">#f2f2f7</color>
+    <color name="colorAppleDarkGray2">#636366</color>
+    <color name="colorAppleDarkGray3">#48484a</color>
+    <color name="colorAppleDarkGray4">#3a3a3c</color>
+    <color name="colorAppleDarkGray5">#2c2c2e</color>
+    <color name="colorAppleDarkGray6">#1c1c1e</color>
+
+    <color name="colorShow_done">#34c759</color>
+    <color name="colorShow_error">#ff3b30</color>
+</resources>

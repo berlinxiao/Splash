@@ -1,0 +1,125 @@
+<resources>
+    <string name="app_name" translatable="false">Splash</string>
+    <string name="app_version" translatable="false">1.2.0</string>
+
+    <string name="home_network_error_title">Network connection timeout</string>
+    <string name="home_network_error">Try changing the network, or try again later</string>
+    <string name="home_network_no_title">Unable to connect to the network</string>
+    <string name="home_network_no">please check whether the network is on</string>
+    <string name="home_network_retry">Retry</string>
+
+    <string name="search_relevant">Relevant</string>
+    <string name="search_latest">Latest</string>
+    <string name="search_fail">Search fail, network connection timeout</string>
+    <string name="search_no_result">No search results</string>
+    <string name="search_result">\t\t%d related search results\t\t</string>
+    <string name="search_tips">More comprehensive search in English</string>
+    <string name="action_search">Search</string>
+    <string name="search_hint">Search Photo</string>
+
+    <string name="show_location">Unknown Location</string>
+    <string name="show_download">Save Photo</string>
+    <string name="show_per_storage">Cannot download without storage permission</string>
+    <string name="show_per_notify">Cannot download without notification permission</string>
+    <string name="show_per_channel">Notification channel is closed, unable to download</string>
+    <string name="show_per_track">Connecting to network,Please wait</string>
+    <string name="show_url_error">The current file is not available for download</string>
+    <string name="show_per_start">Start downloading</string>
+    <string name="show_snackbar_permission">Open permission</string>
+    <string name="notify_down_title">Downloading</string>
+    <string name="notify_down_name"> is Photographer</string>
+    <string name="notify_over_title">Download complete</string>
+    <string name="notify_error_title">Download fail, Network connection error</string>
+    <string name="notify_cancel_title">Download Cancel</string>
+
+    <string name="user_location">Unknown Location</string>
+    <string name="user_bio">Biography</string>
+    <string name="user_photos">Photos %d</string>
+    <string name="user_only">This photographer only has this photo</string>
+
+    <string name="set_preview">Preview</string>
+    <string name="set_hd">High Definition</string>
+    <string name="set_fluent">Fluent</string>
+    <string name="set_download">Download</string>
+    <string name="set_raw">Original</string>
+    <string name="set_full">4K Ultra HD</string>
+    <string name="set_regular">1080P Full HD</string>n
+    <string name="set_load">Load</string>
+    <string name="set_collection">Collection</string>
+    <string name="set_popular">Popular</string>
+    <string name="set_newest">Newest</string>
+    <string name="set_style">Style</string>
+    <string name="set_light">Light</string>
+    <string name="set_dark">Dark</string>
+    <string name="set_language">Languages</string>
+    <string name="set_follow">Follow system</string>
+    <string name="set_english" translatable="false">English</string>
+    <string name="set_japanese" translatable="false">日本語</string>
+    <string name="set_chinese_simple" translatable="false">简体中文</string>
+    <string name="set_chinese_tw" translatable="false">繁體中文</string>
+    <string name="set_ok">OK</string>
+    <string name="set_restart">Effective after restarting the application</string>
+    <string name="set_already">Already in effect</string>
+
+    <string name="about_explain" translatable="false">Powered by Unsplash</string>
+    <string name="about_slogan" translatable="false">Photos for everyone</string>
+    <string name="about_version">Current Version: 1.2.1</string>
+    <string name="about_log">Update Log</string>
+    <string name="about_log_text">Version: 1.2.1 (October 11, 2020)\nFix: Android 6.0-7.0 cannot download the problem\nFix: set interface text display error\nOptimize: part of the code\n\nVersion: 1.2.0 (June 28, 2020)\nAdd: Search filtering\nAdd: drop down refresh\nAdd: picture preview gesture zoom\noptimized: Search page\noptimized: About page\noptimized: core experience\nfixed: known bugs
+        \n\nVersion: 1.1.8 (June 9, 2020)\nAdd: Language selection\nAdd: Traditional Chinese and japanese\nAdd: Dark Theme\nAdd: Click to view image after downloading\nFix: Some systems crash due to exception when applying for permission\nOptimization: Settings UI\nOptimization: Search page experience\nOptimization:Photographer pages details
+        \n\nVersion: 1.1.3 (June 3, 2020)\nAdd: Photographers homepage\nAdd: Transition animation\nOptimization: UI color\nOptimization: UI Layout\nOptimization: Part of business logic
+        \n\nVersion: 1.0.7 (May 19, 2020)\nFix: Unable to notify the system to update album due to broadcasting error\nFix: Exception capture error caused by connection failure during download\nOptimization: Notification bar properties\nOptimization: Status bar</string>
+    <string name="about_developer">Developer</string>
+    <string name="about_developer_name" translatable="false">Henry Xiao</string>
+    <string name="about_developer_brief" translatable="false">Programmer</string>
+    <string name="about_developer_web">Website</string>
+    <string name="about_developer_web_site" translatable="false">https://henryxxiao.github.io/</string>
+    <string name="about_developer_email" translatable="false">nk11112@outlook.com</string>
+    <string name="about_developer_email_text">Send error report, propose application proposal</string>
+    <string name="about_developer_reward">Reward</string>
+    <string name="about_developer_reward_wechatpay">WeChat Pay</string>
+    <string name="about_developer_reward_emoji" translatable="false">🥳</string>
+    <string name="about_developer_reward_text">Like Splash Apps? Give me a reward</string>
+    <string name="about_libraries">Libraries</string>
+    <string name="about_library_glide" translatable="false">Glide</string>
+    <string name="about_library_gson" translatable="false">Gson</string>
+    <string name="about_library_lottie" translatable="false">AirbnbLottie</string>
+    <string name="about_library_LB" translatable="false">LoadingButtonAndroid</string>
+    <string name="about_library_photoView" translatable="false">PhotoView</string>
+    <string name="about_library_retrofit" translatable="false">Retrofit</string>
+    <string name="about_library_rxjava" translatable="false">RxJava</string>
+    <string name="about_library_cd" translatable="false">ClassicDownload</string>
+    <string name="about_library_glide_subtitle" translatable="false">An image loading and caching library for Android focused on smooth scrolling</string>
+    <string name="about_library_gson_subtitle" translatable="false">A Java serialization/deserialization library to convert Java Objects into JSON and back</string>
+    <string name="about_library_lottie_subtitle" translatable="false">Render After Effects animations natively on Android and iOS, Web, and React Native</string>
+    <string name="about_library_LB_subtitle" translatable="false">A button to substitute the ProgressDialog</string>
+    <string name="about_library_photoView_subtitle" translatable="false">Implementation of ImageView for Android that supports zooming, by various touch gestures</string>
+    <string name="about_library_retrofit_subtitle" translatable="false">A type-safe HTTP client for Android and the JVM</string>
+    <string name="about_library_rxjava_subtitle" translatable="false">Reactive Extensions for the JVM – a library for composing asynchronous and event-based programs using observable sequences for the Java VM</string>
+    <string name="about_library_cd_subtitle" translatable="false">A set of Android downloader based on RxJava</string>
+    <string name="about_email_error">Can\'t open E-mail App, Please send it manually</string>
+    <string name="about_browser_error">Can\'t open browser</string>
+    <string name="about_send_email_title">Feedback title</string>
+    <string name="about_send_email_text">Feedback text</string>
+
+    <string name="menu_home" translatable="false">
+        S\t
+        P\t
+        L\t
+        A\t
+        S\t
+        H</string>
+    <string name="menu_set">Settings</string>
+    <string name="menu_about">About</string>
+
+    <string name="describe_show_image">Preview photo</string>
+    <string name="describe_show_head">Photographer profile</string>
+    <string name="describe_show_location">Location Icon</string>
+    <string name="describe_set_preview">Preview settings</string>
+    <string name="describe_set_download">Download settings</string>
+    <string name="describe_set_load">Load settings</string>
+    <string name="describe_logo">Logo</string>
+    <string name="describe_icon">Icon</string>
+    <string name="describe_background">Background</string>
+
+</resources>

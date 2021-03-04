@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval"
+            android:useLevel="false">
+            <padding
+                android:bottom="2dp"
+                android:left="2dp"
+                android:right="2dp"
+                android:top="2dp" />
+            <solid android:color="#0DCCCCCC" />
+
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval"
+            android:useLevel="false">
+            <padding
+                android:bottom="2dp"
+                android:left="2dp"
+                android:right="2dp"
+                android:top="2dp" />
+            <solid android:color="#10CCCCCC" />
+
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval"
+            android:useLevel="false">
+            <padding
+                android:bottom="2dp"
+                android:left="2dp"
+                android:right="2dp"
+                android:top="2dp" />
+            <solid android:color="#15CCCCCC" />
+
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval"
+            android:useLevel="false">
+            <padding
+                android:bottom="2dp"
+                android:left="2dp"
+                android:right="2dp"
+                android:top="2dp" />
+            <solid android:color="#20CCCCCC" />
+
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval"
+            android:useLevel="false">
+            <padding
+                android:bottom="2dp"
+                android:left="2dp"
+                android:right="2dp"
+                android:top="2dp" />
+            <solid android:color="#30CCCCCC" />
+
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval"
+            android:useLevel="false">
+            <solid android:color="#FFFFFF" />
+             <size android:height="66dp"
+                 android:width="66dp"/>
+        </shape>
+    </item>
+</layer-list>
