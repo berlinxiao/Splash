@@ -1,5 +1,5 @@
 # Splash Wallpaper
-![预览](https://github.com/berlinxiao/Splash/blob/master/image/shows.jpg?raw=true)
+![预览](https://raw.githubusercontent.com/berlinxiao/Splash/master/image/shows.jpg)
 
 ## 简介
 * 一款轻量化的安卓Unsplash客户端
