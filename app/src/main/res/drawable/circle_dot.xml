@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <!-- 填充颜色 -->
+    <gradient
+        android:type="linear"
+        android:angle="0"
+        android:startColor="#000000"
+        android:centerColor="#333333"
+        android:centerX="0.5"
+        android:endColor="#FFFFFF" />
+    <!-- 强制宽高相等即为正圆 -->
+    <size android:width="8dp" android:height="8dp" />
+</shape>

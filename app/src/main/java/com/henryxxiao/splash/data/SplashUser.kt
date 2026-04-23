@@ -1,19 +1,22 @@
 package com.henryxxiao.splash.data
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 @Parcelize
 data class SplashUser(
         val id: String,
         val username: String,
         val name: String,
-        val portfolio_url: String?,
-        val bio: String?,
-        val location: String?,
-        val total_likes: Int,
-        val total_photos: Int,
-        val total_collection: Int,
-        val profile_image: SplashUrls,
+        @SerialName("portfolio_url") val portfolioUrl: String?,
+        val bio: String? = null,
+        val location: String? = null,
+        @SerialName("total_likes") val totalLikes: Int = 0,
+        @SerialName("total_photos") val totalPhotos: Int = 0,
+        @SerialName("total_collections") val totalCollections: Int = 0,
+        @SerialName("profile_image") val profileImage: SplashUrls?,
         val links: SplashLinks
 ) : Parcelable

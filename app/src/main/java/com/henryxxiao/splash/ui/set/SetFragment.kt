@@ -1,393 +1,350 @@
-package com.henryxxiao.splash.ui.set;
+package com.henryxxiao.splash.ui.set
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.MotionEvent
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
+import com.google.android.material.transition.MaterialSharedAxis
+import com.henryxxiao.splash.R
+import com.henryxxiao.splash.databinding.FragmentSetBinding
+import com.henryxxiao.splash.utils.PhotoCacheManager
+import com.henryxxiao.splash.utils.settings.AppLanguage
+import com.henryxxiao.splash.utils.settings.DownloadQuality
+import com.henryxxiao.splash.utils.settings.LoadType
+import com.henryxxiao.splash.utils.settings.PreviewQuality
+import com.henryxxiao.splash.utils.settings.SettingsManager
+import com.henryxxiao.splash.utils.settings.ThemeStyle
+import com.henryxxiao.splash.utils.view.MenuItem
+import com.henryxxiao.splash.utils.view.PopupWindow
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.File
+import androidx.core.net.toUri
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.GridLayoutManager;
+class SetFragment : Fragment() {
+    private var _binding: FragmentSetBinding? = null
+    private val binding get() = _binding!!
+    private var popupWindow: PopupWindow? = null
+    private var currentCacheSizeMB: Double = 0.0  // 当前的缓存大小，方便判断和做动画
+    private val settingsManager by lazy { SettingsManager(requireContext()) }
 
-import com.google.android.material.snackbar.Snackbar;
-import com.henryxxiao.splash.MainActivity;
-import com.henryxxiao.splash.R;
-import com.henryxxiao.splash.databinding.FragmentSetBinding;
-import com.henryxxiao.splash.ui.home.HomeFragment;
-import com.henryxxiao.splash.utils.LocalUtils;
-import com.henryxxiao.splash.utils.MySP;
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
-public class SetFragment extends Fragment {
-    private FragmentSetBinding binding;
-    private List<SetItem> setItemList = new ArrayList<>();
-    private MySP sp;
-    int preview;
-    int download;
-    int load;
-    int language;
-    int style;
-
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentSetBinding.inflate(inflater, container, false);
-
-        sp = new MySP(getActivity());
-        setHasOptionsMenu(true);
-
-        preview = sp.getmPreview();
-        download = sp.getmDownload();
-        load = sp.getmLoad();
-        language = sp.getmLanguage();
-        style = sp.getmStyle();
-
-        String previewStatus = getString(R.string.set_fluent);
-        String downloadStatus = getString(R.string.set_regular);
-        String loadStatus = getString(R.string.set_collection);
-        String languageStatus = getString(R.string.set_follow);
-        String styleStatus = getString(R.string.set_light);
-        int previewColor = 0xFF6fd1f7;
-        int downloadColor = 0xFF7540ee;
-        int loadColor = 0xFF44dc94;
-        int aboutColor = 0xFFff9441;
-        int languageColor = 0xFFea4637;
-        int styleColor = 0xFF9fa1a5;
-        int previewBackColor = 0xFFebf7ff;
-        int downloadBackColor = 0xFFf1ecfd;
-        int loadBackColor = 0xFFedfbf3;
-        int aboutBackColor = 0xFFfff7f1;
-        int languageBackColor = 0xFFfce3e2;
-        int styleBackColor = 0xFFf1f1f3;
-        if (preview == 0) {
-            previewStatus = getString(R.string.set_hd);
-        }
-        switch (download) {
-            case 0:
-                downloadStatus = getString(R.string.set_raw);
-                break;
-            case 1:
-                downloadStatus = getString(R.string.set_full);
-                break;
-        }
-        switch (load){
-            case 1:
-                loadStatus = getString(R.string.set_popular);
-                break;
-            case 2:
-                loadStatus = getString(R.string.set_newest);
-                break;
-        }
-        switch (language) {
-            case 1:
-                languageStatus = getString(R.string.set_english);
-                break;
-            case 2:
-                languageStatus = getString(R.string.set_japanese);
-                break;
-            case 3:
-                languageStatus = getString(R.string.set_chinese_simple);
-                break;
-            case 4:
-                languageStatus = getString(R.string.set_chinese_tw);
-                break;
-        }
-        if (style == 1) {
-            styleStatus = getString(R.string.set_dark);
-        }
-        //暗黑主题下图标的颜色
-        if (MainActivity.style == 1) {
-            previewColor = 0xFF0094e0;
-            downloadColor = 0xFF4309e4;
-            loadColor = 0xFF00b85c;
-            aboutColor = 0xFFf88615;
-            languageColor = 0xFFc93330;
-            styleColor = 0xFF333333;
-            previewBackColor = 0xFF86d4ff;
-            downloadBackColor = 0xFFaa91ef;
-            loadBackColor = 0xFF8fedb8;
-            aboutBackColor = 0xFFeacebd;
-            languageBackColor = 0xFFf1bbb6;
-            styleBackColor = 0xFF9fa1a5;
-        }
-
-        //八进制颜色0xFF
-        SetItem previewItem = new SetItem(getString(R.string.set_preview), previewStatus, R.drawable.ic_set_preview, previewColor, previewBackColor);
-        setItemList.add(previewItem);
-        SetItem downloadItem = new SetItem(getString(R.string.set_download), downloadStatus, R.drawable.ic_set_download, downloadColor, downloadBackColor);
-        setItemList.add(downloadItem);
-        SetItem loadItem = new SetItem(getString(R.string.set_load), loadStatus, R.drawable.ic_set_photo_home, loadColor, loadBackColor);
-        setItemList.add(loadItem);
-        SetItem languageItem = new SetItem(getString(R.string.set_language), languageStatus, R.drawable.ic_set_language, languageColor, languageBackColor);
-        setItemList.add(languageItem);
-        SetItem styleItem = new SetItem(getString(R.string.set_style), styleStatus, R.drawable.ic_set_style, styleColor, styleBackColor);
-        setItemList.add(styleItem);
-        SetItem aboutItem = new SetItem(getString(R.string.menu_about), "", R.drawable.ic_set_about, aboutColor, aboutBackColor);
-        setItemList.add(aboutItem);
-
-        return binding.getRoot();
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, true)
+        returnTransition = null //防止残影
     }
 
-    /*
-    分段处理，不然界面会出现卡顿
-     */
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        GridLayoutManager managerGrid = new GridLayoutManager(getActivity(), 2);
-        binding.setRecyclerView.setLayoutManager(managerGrid);
-        binding.setRecyclerView.setHasFixedSize(true);
-
-
-        SetAdapter setAdapter = new SetAdapter(setItemList);
-        binding.setRecyclerView.setAdapter(setAdapter);
-
-        setAdapter.setOnItemClickListener((position, textView) -> {
-            switch (position) {
-                case 0:
-                    showPreviewDialog(textView);
-                    break;
-                case 1:
-                    showDownloadDialog(textView);
-                    break;
-                case 2:
-                    showLoadDialog(textView);
-                    break;
-                case 3:
-                    showLanguageDialog(textView);
-                    break;
-                case 4:
-                    showStyleDialog(textView);
-                    break;
-                case 5:
-                    if (getView() != null)
-                    Navigation.findNavController(getView()).navigate(R.id.nav_about);
-                    break;
-            }
-        });
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentSetBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    //预览对话框
-    int previewChoice;
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    private void showPreviewDialog(TextView textView) {
-        final String[] items = {getString(R.string.set_hd), getString(R.string.set_fluent)};
-        AlertDialog.Builder previewDialog = new AlertDialog.Builder(binding.getRoot().getContext());
-        previewDialog.setTitle(getString(R.string.set_preview));
-        //第二个参数是显示时选中的选项
-        previewDialog.setSingleChoiceItems(items, preview,
-                (dialog, which) -> previewChoice = which);
-        previewDialog.setPositiveButton(getString(R.string.set_ok), (dialog, which) -> {
-            switch (previewChoice) {
-                case 0:
-                    sp.setmPreview(0);
-                    preview = 0;
-                    textView.setText(getString(R.string.set_hd));
-                    break;
-                case 1:
-                    sp.setmPreview(1);
-                    preview = 1;
-                    textView.setText(getString(R.string.set_fluent));
-                    break;
+        loadCacheSize() // 异步加载并显示缓存大小
+        setupTouchListeners()
+        observeSettings()
+
+        binding.clear.setOnClickListener {
+            showConfirmSheet()
+        }
+        // 开启协程，异步获取初始状态
+        viewLifecycleOwner.lifecycleScope.launch {
+            // 异步等待拿到本地存储的最新主题状态
+            val initialStyle = settingsManager.styleFlow.first()
+
+            // 先摘掉监听器
+            binding.switchDaynight.setOnCheckedChangeListener(null)
+
+            binding.switchDaynight.isChecked = (initialStyle == ThemeStyle.DARK)
+
+            // 斩断动画瞬间把 Switch 的内部 UI 强行拖拽到最终位置！
+            binding.switchDaynight.jumpDrawablesToCurrentState()
+
+            binding.switchDaynight.setOnCheckedChangeListener { _, isChecked ->
+                val newStyle = if (isChecked) ThemeStyle.DARK else ThemeStyle.LIGHT
+                viewLifecycleOwner.lifecycleScope.launch {
+                    settingsManager.saveStyle(newStyle)
+                }
             }
-        });
-        previewDialog.show();
+        }
+
+        binding.version.setOnClickListener {
+            if (parentFragmentManager.findFragmentByTag("LogSheetTag") == null) {
+                val bottomSheet = VersionLogSheet()
+                bottomSheet.show(parentFragmentManager, "LogSheetTag")
+            }
+        }
+
+        binding.unsplash.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, "https://unsplash.com/".toUri())
+            startActivity(intent)
+        }
+
+        binding.setBtnBack.setOnClickListener { findNavController().navigateUp() }
     }
 
-    //下载对话框
-    int downloadChoice;
-
-    private void showDownloadDialog(TextView textView) {
-        final String[] items = {getString(R.string.set_raw), getString(R.string.set_full), getString(R.string.set_regular)};
-        AlertDialog.Builder downloadDialog = new AlertDialog.Builder(binding.getRoot().getContext());
-        downloadDialog.setTitle(getString(R.string.set_download));
-        //第二个参数是显示时选中的选项
-        downloadDialog.setSingleChoiceItems(items, download,
-                (dialog, which) -> downloadChoice = which);
-        downloadDialog.setPositiveButton(getString(R.string.set_ok), (dialog, which) -> {
-            switch (downloadChoice) {
-                case 0:
-                    sp.setmDownload(0);
-                    download = 0;
-                    textView.setText(getString(R.string.set_raw));
-                    break;
-                case 1:
-                    sp.setmDownload(1);
-                    download = 1;
-                    textView.setText(getString(R.string.set_full));
-                    break;
-                case 2:
-                    sp.setmDownload(2);
-                    download = 2;
-                    textView.setText(getString(R.string.set_regular));
-                    break;
-            }
-        });
-        downloadDialog.show();
-    }
-
-    //预载对话框
-    int loadChoice;
-
-    private void showLoadDialog(TextView textView) {
-        int tempLoad = load;//用于判断有没有改变
-        final String[] items = {getString(R.string.set_collection), getString(R.string.set_popular), getString(R.string.set_newest)};
-        AlertDialog.Builder loadDialog = new AlertDialog.Builder(binding.getRoot().getContext());
-        loadDialog.setTitle(getString(R.string.set_load));
-        //第二个参数是显示时选中的选项
-        loadDialog.setSingleChoiceItems(items, load,
-                (dialog, which) -> loadChoice = which);
-        loadDialog.setPositiveButton(getString(R.string.set_ok), (dialog, which) -> {
-            switch (loadChoice) {
-                case 0:
-                    sp.setmLoad(0);
-                    load = 0;
-                    textView.setText(getString(R.string.set_collection));
-                    break;
-                case 1:
-                    sp.setmLoad(1);
-                    load = 1;
-                    textView.setText(getString(R.string.set_popular));
-                    break;
-                case 2:
-                    sp.setmLoad(2);
-                    load = 2;
-                    textView.setText(getString(R.string.set_newest));
-                    break;
-            }
-            if (tempLoad != load){
-                HomeFragment.isChange = true;
-                showSnackbar(getString(R.string.set_already));
-            }
-        });
-        loadDialog.show();
-    }
-
-    //语言对话框
-    int languageChoice;
-
-    private void showLanguageDialog(TextView textView) {
-        final String[] items = {getString(R.string.set_follow), getString(R.string.set_english),getString(R.string.set_japanese), getString(R.string.set_chinese_simple),getString(R.string.set_chinese_tw)};
-        AlertDialog.Builder languageDialog = new AlertDialog.Builder(binding.getRoot().getContext());
-        languageDialog.setTitle(getString(R.string.set_language));
-        //第二个参数是显示时选中的选项
-        languageDialog.setSingleChoiceItems(items, language,
-                (dialog, which) -> languageChoice = which);
-        languageDialog.setPositiveButton(getString(R.string.set_ok), (dialog, which) -> {
-            switch (languageChoice) {
-                case 0:
-                    sp.setmLanguage(0);
-                    language = 0;
-                    textView.setText(getString(R.string.set_follow));
-                    //部分机型出现java.lang.NullPointerException: Can't set default locale to NULL
-                    if (MainActivity.defaultLocale != null){
-                        LocalUtils.setLanguage(getActivity(), MainActivity.defaultLocale);
-                    }else {
-                        LocalUtils.setLanguage(getActivity(), Locale.SIMPLIFIED_CHINESE);
+    // ==========================================
+    // 响应式 UI：监听流并自动更新UI状态和文字
+    // ==========================================
+    private fun observeSettings() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                // 监听语言
+                launch {
+                    settingsManager.languageFlow.collectLatest { lang ->
+                        binding.textLanguage.text = when (lang) {
+                            AppLanguage.ENGLISH -> getString(R.string.set_english)
+                            AppLanguage.JAPANESE -> getString(R.string.set_japanese)
+                            AppLanguage.CHINESE_SIMPLE -> getString(R.string.set_chinese_simple)
+                            AppLanguage.CHINESE_TW -> getString(R.string.set_chinese_tw)
+                            AppLanguage.FOLLOW_SYSTEM -> getString(R.string.set_follow)
+                        }
                     }
-                    break;
-                case 1:
-                    sp.setmLanguage(1);
-                    language = 1;
-                    textView.setText(getString(R.string.set_english));
-                    LocalUtils.setLanguage(getActivity(), Locale.ENGLISH);
-                    break;
-                case 2:
-                    sp.setmLanguage(2);
-                    language = 2;
-                    textView.setText(getString(R.string.set_japanese));
-                    LocalUtils.setLanguage(getActivity(), Locale.JAPANESE);
-                    break;
-                case 3:
-                    sp.setmLanguage(3);
-                    language = 3;
-                    textView.setText(getString(R.string.set_chinese_simple));
-                    LocalUtils.setLanguage(getActivity(), Locale.SIMPLIFIED_CHINESE);
-                    break;
-                case 4:
-                    sp.setmLanguage(4);
-                    language = 4;
-                    textView.setText(getString(R.string.set_chinese_tw));
-                    LocalUtils.setLanguage(getActivity(), Locale.TRADITIONAL_CHINESE);
-                    break;
+                }
+
+                // 首页加载
+                launch {
+                    settingsManager.loadTypeFlow.collectLatest { load ->
+                        binding.textLoad.text = when (load) {
+                            LoadType.NEWEST -> getString(R.string.set_newest)
+                            LoadType.POPULAR -> getString(R.string.set_popular)
+                        }
+                    }
+                }
+
+                // 监听预览画质
+                launch {
+                    settingsManager.previewFlow.collectLatest { preview ->
+                        binding.textPreview.text = when (preview) {
+                            PreviewQuality.FLUENT -> getString(R.string.set_fluent)
+                            PreviewQuality.HIGH_DEF -> getString(R.string.set_hd)
+                        }
+                    }
+                }
+
+                // 监听下载画质
+                launch {
+                    settingsManager.downloadFlow.collectLatest { down ->
+                        binding.textDownload.text = when (down) {
+                            DownloadQuality.RAW -> getString(R.string.set_raw)
+                            DownloadQuality.FULL -> getString(R.string.set_full)
+                            DownloadQuality.REGULAR -> getString(R.string.set_regular)
+                        }
+                    }
+                }
             }
-            showSnackbar(getString(R.string.set_already));
-        });
-        languageDialog.show();
-    }
-
-    //主题对话框
-    int styleChoice;
-
-    private void showStyleDialog(TextView textView) {
-        final String[] items = {getString(R.string.set_light), getString(R.string.set_dark)};
-        AlertDialog.Builder styleDialog = new AlertDialog.Builder(binding.getRoot().getContext());
-        styleDialog.setTitle(getString(R.string.set_style));
-        //第二个参数是显示时选中的选项
-        styleDialog.setSingleChoiceItems(items, style,
-                (dialog, which) -> styleChoice = which);
-        styleDialog.setPositiveButton(getString(R.string.set_ok), (dialog, which) -> {
-            switch (styleChoice) {
-                case 0:
-                    sp.setmStyle(0);
-                    style = 0;
-                    textView.setText(getString(R.string.set_light));
-                    break;
-                case 1:
-                    sp.setmStyle(1);
-                    style = 1;
-                    textView.setText(getString(R.string.set_dark));
-                    break;
-            }
-            showSnackbar(getString(R.string.set_restart));
-        });
-        styleDialog.show();
-    }
-
-    private void showSnackbar (String str){
-        Snackbar snackbar = Snackbar.make(binding.setRecyclerView, str, Snackbar.LENGTH_SHORT);
-        if (MainActivity.style == 1){
-            snackbar.getView().setBackgroundColor(0xFF2c2c2e);
-            snackbar.setTextColor(0xFFe5e5ea);
-        }else {
-            snackbar.getView().setBackgroundColor(0xFFf4f5f6);
-            snackbar.setTextColor(0xFF1c1c1e);
         }
-        snackbar.show();
-        sp.saveData();
-    }
-    /*
-    在Pause中保存数据
-    */
-    @Override
-    public void onPause() {
-        super.onPause();
-        sp.saveData();
     }
 
-    //隐藏menu
-    @Override
-    public void onPrepareOptionsMenu(Menu menu) {
-        menu.clear();
+    // ==========================================
+    // 触摸与弹窗触发逻辑
+    // ==========================================
+    @SuppressLint("ClickableViewAccessibility")
+    private fun setupTouchListeners() {
+        // 语言设置
+        val languageOptions = listOf(
+            AppLanguage.FOLLOW_SYSTEM to getString(R.string.set_follow),
+            AppLanguage.ENGLISH to getString(R.string.set_english),
+            AppLanguage.JAPANESE to getString(R.string.set_japanese),
+            AppLanguage.CHINESE_SIMPLE to getString(R.string.set_chinese_simple),
+            AppLanguage.CHINESE_TW to getString(R.string.set_chinese_tw)
+        )
+        binding.languages.setOnTouchListener { v, event ->
+            showPopupOnTouch(v, event, settingsManager.languageFlow, languageOptions) { selectedEnum  ->
+                settingsManager.saveLanguage(selectedEnum )
+            }
+        }
+
+        // 首页加载类型
+        val loadOptions = listOf(
+            LoadType.NEWEST to getString(R.string.set_newest),
+            LoadType.POPULAR to getString(R.string.set_popular)
+        )
+        binding.load.setOnTouchListener { v, event ->
+            showPopupOnTouch(v, event, settingsManager.loadTypeFlow, loadOptions) { selectedEnum ->
+                settingsManager.saveLoadType(selectedEnum)
+            }
+        }
+
+        // 预览画质设置
+        val previewOptions = listOf(
+            PreviewQuality.HIGH_DEF to getString(R.string.set_hd),
+            PreviewQuality.FLUENT to getString(R.string.set_fluent)
+        )
+        binding.preview.setOnTouchListener { v, event ->
+            showPopupOnTouch(v, event, settingsManager.previewFlow, previewOptions) { selectedEnum ->
+                settingsManager.savePreview(selectedEnum)
+            }
+        }
+
+        // 下载画质设置
+        val downloadOptions = listOf(
+            DownloadQuality.RAW to  getString(R.string.set_raw),
+            DownloadQuality.FULL to getString(R.string.set_full),
+            DownloadQuality.REGULAR to getString(R.string.set_regular)
+        )
+        binding.download.setOnTouchListener { v, event ->
+            showPopupOnTouch(v, event, settingsManager.downloadFlow, downloadOptions) { selectedEnum ->
+                settingsManager.saveDownload(selectedEnum)
+            }
+        }
     }
 
-    /*
-     fragment 的生命周期与 activity 的生命周期不同，
-     并且该fragment可以超出其视图的生命周期，
-     因此如果不将其设置为null，则可能会发生内存泄漏。
+    // ==========================================
+    // 泛型万能弹窗触发器，通用的触摸事件拦截与弹窗触发器
+    // ==========================================
+    /**
+     * @param T : Enum<T> 限制 T 必须是一个枚举类型
      */
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        //需要清空List,否则关于页面返回时RecyclerView会重复叠加
-        setItemList.clear();
-        binding = null;
+    private fun <T : Enum<T>> showPopupOnTouch(
+        anchor: View,
+        event: MotionEvent,
+        flow: Flow<T>,
+        options: List<Pair<T, String>>,
+        onSave: suspend (T) -> Unit
+    ): Boolean {
+        if (event.action == MotionEvent.ACTION_UP) {
+            anchor.performClick()
+            viewLifecycleOwner.lifecycleScope.launch {
+                // 瞬间抓取当前最新的枚举值
+                val currentSelectedEnum = flow.first()
+
+                popupWindow?.dismiss()
+
+                // 映射成 MenuItem
+                val items = options.mapIndexed { index, pair ->
+                    MenuItem(
+                        id = index, // ID 只是给 MenuItem 内部用的标识
+                        title = pair.second,
+                        isSelected = (currentSelectedEnum == pair.first),
+                        showCheckWhenSelected = true
+                    )
+                }
+
+                popupWindow = PopupWindow(
+                    context = requireContext(),
+                    items = items,
+                    onItemClick = { clickedItem ->
+                        viewLifecycleOwner.lifecycleScope.launch {
+                            val targetEnum = options[clickedItem.id].first
+                            onSave(targetEnum)
+                        }
+                    }
+                )
+                popupWindow?.show(anchor, event.rawX, event.rawY)
+            }
+        }
+        return false
+    }
+
+    // ==========================================
+    //  Glide 缓存 和 数据缓存 的计算与清理
+    // ==========================================
+
+    @SuppressLint("DefaultLocale")
+    private fun loadCacheSize() {
+        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
+            try {
+                // 获取 Glide 缓存目录
+                val glideCacheDir = Glide.getPhotoCacheDir(requireContext())
+                val glideSizeBytes = getFolderSize(glideCacheDir)
+
+                // B. 计算 PhotoDetail 详情 JSON 缓存大小
+                val detailsSizeBytes = PhotoCacheManager.getCacheSizeBytes(requireContext())
+
+                // C. 合计并转为 MB
+                val totalBytes = glideSizeBytes + detailsSizeBytes
+                currentCacheSizeMB = totalBytes / (1024.0 * 1024.0)
+
+                // 切换回主线程更新 UI
+                withContext(Dispatchers.Main) {
+                    binding.textCache.text = String.format("%.2f MB", currentCacheSizeMB)
+                }
+            } catch (_: Exception) {
+                currentCacheSizeMB = 0.0
+                withContext(Dispatchers.Main) {
+                    binding.textCache.text = getString(R.string.set_cache)
+                }
+            }
+        }
+    }
+
+    private fun getFolderSize(file: File?): Long {
+        var size: Long = 0
+        if (file != null && file.exists()) {
+            if (file.isDirectory) {
+                file.listFiles()?.forEach { child -> size += getFolderSize(child) }
+            } else {
+                size = file.length()
+            }
+        }
+        return size
+    }
+
+    private fun showConfirmSheet() {
+        if (parentFragmentManager.findFragmentByTag("Confirm_sheet") != null) return
+        // 智能拦截：毫无缓存时直接提示，不弹窗
+        if (currentCacheSizeMB <= 0.01) {
+            Toast.makeText(requireContext(), getString(R.string.set_no_cache), Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // 核心修改：将 String.format 改成了直接传 Float 过去
+        ConfirmSheet.newInstance(currentCacheSizeMB.toFloat()).apply {
+            onConfirm = {
+                // 收到回调，执行真正的清理
+                clearCache()
+            }
+        }.show(parentFragmentManager, "Confirm_sheet")
+    }
+
+    private fun clearCache() {
+        // 清理缓存必须慎重对待线程分配
+        viewLifecycleOwner.lifecycleScope.launch {
+            // 注意：此时屏幕上显示的是 ConfirmSheet 的动画。
+            // 当这几行代码在后台执行完，ConfirmSheet 也刚好播完动画关闭了。
+
+            // 1. 清理内存缓存 (强制要求在主线程执行)
+            Glide.get(requireContext()).clearMemory()
+
+            // 2. 清理磁盘缓存 (强制要求在后台 IO 线程执行)
+            withContext(Dispatchers.IO) {
+                // 清理图片磁盘缓存
+                Glide.get(requireContext()).clearDiskCache()
+                // 清理图片详情的缓存
+                PhotoCacheManager.clearCache(requireContext())
+            }
+
+            // 3. 归零 UI
+            currentCacheSizeMB = 0.0
+            binding.textCache.text = getString(R.string.set_cache)
+            Toast.makeText(requireContext(), getString(R.string.set_cache_clear), Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        // 避免内存泄漏
+        popupWindow?.dismiss()
+        _binding = null
     }
 }

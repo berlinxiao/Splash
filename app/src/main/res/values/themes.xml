@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <!--
+        这是启用 Activity 共享元素过渡的必要开关。不设置这个，MaterialContainerTransform 不会生效。
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        -->
+
+
+        <!-- ────────────────────────────────────────────────────────
+              主色（Primary）
+              浅色模式用 600 级：饱和稳重，满足对比度要求。
+              按钮、选中态、进度条等组件默认读取此值。
+         ──────────────────────────────────────────────────────────── -->
+        <item name="colorPrimary">@color/brand_600</item>
+        <!-- 主色上的文字 / 图标，例如实心按钮的文字颜色 -->
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- 主色容器背景，例如 FAB 背景、选中 Chip 底色 -->
+        <item name="colorPrimaryContainer">@color/brand_50</item>
+        <!-- 主色容器内的文字 / 图标 -->
+        <item name="colorOnPrimaryContainer">@color/brand_800</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             次要色（Secondary）
+             用于区分辅助操作，与主色形成层次。
+        ──────────────────────────────────────────────────────────── -->
+        <item name="colorSecondary">@color/info_600</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/info_50</item>
+        <item name="colorOnSecondaryContainer">@color/info_800</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             第三色（Tertiary）
+             用于正向强调，如确认操作、完成状态。
+        ──────────────────────────────────────────────────────────── -->
+        <item name="colorTertiary">@color/success_600</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">@color/success_50</item>
+        <item name="colorOnTertiaryContainer">@color/success_800</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             错误色（Error）
+             输入框报错、危险操作按钮等场景自动读取。
+        ──────────────────────────────────────────────────────────── -->
+        <item name="colorError">@color/error_600</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="colorErrorContainer">@color/error_50</item>
+        <item name="colorOnErrorContainer">@color/error_800</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             背景（Background）
+             整个窗口 / 页面的最底层背景色。
+             android:colorBackground 控制 Window 实际绘制颜色。
+        ──────────────────────────────────────────────────────────── -->
+        <item name="android:colorBackground">@color/light_bg_page</item>
+        <item name="colorOnBackground">@color/light_text_primary</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             Surface
+             卡片、对话框、底部弹窗等浮层的背景色。
+        ──────────────────────────────────────────────────────────── -->
+        <item name="colorSurface">@color/light_bg_card</item>
+        <item name="colorOnSurface">@color/light_text_primary</item>
+        <!-- Surface 上的次要文字，如 hint、辅助说明 -->
+        <item name="colorOnSurfaceVariant">@color/light_text_secondary</item>
+        <!-- Surface 变体，用于嵌套层级略深的区域，如列表背景 -->
+        <item name="colorSurfaceVariant">@color/light_text_disabled</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             描边 / 分割线
+        ──────────────────────────────────────────────────────────── -->
+        <!-- 标准描边：卡片边框、输入框默认边框 -->
+        <item name="colorOutline">@color/light_border_default</item>
+        <!-- 弱描边：列表内分割线等更细腻的场景 -->
+        <item name="colorOutlineVariant">@color/light_border_subtle</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             系统栏
+        ──────────────────────────────────────────────────────────── -->
+        <!-- 状态栏颜色与页面背景保持一致，实现沉浸感 -->
+        <item name="android:statusBarColor">@color/light_bg_page</item>
+        <!-- 浅色背景下使用深色状态栏图标 -->
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- 导航栏颜色 -->
+        <item name="android:navigationBarColor">@color/light_bg_page</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             禁用态透明度
+             系统用此值自动计算禁用状态的组件透明度，无需手动设置。
+        ──────────────────────────────────────────────────────────── -->
+        <item name="android:disabledAlpha">0.38</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             全局圆角形状
+        ──────────────────────────────────────────────────────────── -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.App.Large</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             组件样式覆盖
+             将设计系统规范的组件样式注入全局，
+             布局文件中无需逐一指定 style=""。
+        ──────────────────────────────────────────────────────────── -->
+        <item name="materialButtonStyle">@style/Widget.App.Button.Primary</item>
+        <item name="borderlessButtonStyle">@style/Widget.App.Button.Text</item>
+        <item name="materialCardViewStyle">@style/Widget.App.Card</item>
+        <item name="textInputStyle">@style/Widget.App.TextInput</item>
+        <item name="chipStyle">@style/Widget.App.Chip</item>
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNav</item>
+        <item name="toolbarStyle">@style/Widget.App.TopAppBar</item>
+        <item name="linearProgressIndicatorStyle">@style/Widget.App.Progress.Linear</item>
+        <item name="circularProgressIndicatorStyle">@style/Widget.App.Progress.Circular</item>
+
+    </style>
+
+
+    <!-- ╔══════════════════════════════════════════════════════════╗ -->
+    <!-- ║  对话框主题                                              ║ -->
+    <!-- ╚══════════════════════════════════════════════════════════╝ -->
+    <style name="Theme.App.Dialog" parent="Theme.Material3.DayNight.Dialog">
+        <item name="colorPrimary">@color/brand_600</item>
+        <item name="colorSurface">@color/light_bg_card</item>
+        <item name="colorOnSurface">@color/light_text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/light_text_secondary</item>
+        <item name="dialogCornerRadius">@dimen/radius_xl</item>
+    </style>
+
+
+    <!-- ╔══════════════════════════════════════════════════════════╗ -->
+    <!-- ║  底部弹窗主题                                            ║ -->
+    <!-- ╚══════════════════════════════════════════════════════════╝ -->
+    <style name="Theme.App.BottomSheet" parent="Theme.Material3.DayNight.BottomSheetDialog">
+        <item name="colorPrimary">@color/brand_600</item>
+        <item name="colorSurface">@color/light_bg_card</item>
+        <item name="colorOnSurface">@color/light_text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/light_text_secondary</item>
+        <item name="bottomSheetStyle">@style/Widget.App.BottomSheet</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         形状外观
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <!-- 小圆角：4dp，用于输入框、Badge、小 Chip -->
+    <style name="ShapeAppearance.App.Small" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_xs</item>
+    </style>
+
+    <!-- 中圆角：8dp，用于按钮、卡片内子元素 -->
+    <style name="ShapeAppearance.App.Medium" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_sm</item>
+    </style>
+
+    <!-- 大圆角：14dp，用于卡片、底部弹窗 -->
+    <style name="ShapeAppearance.App.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_lg</item>
+    </style>
+
+    <!-- 胶囊形：999dp，用于头像、pill 标签、开关 -->
+    <style name="ShapeAppearance.App.Pill" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_pill</item>
+    </style>
+
+    <!-- 底部弹窗专用：仅顶部圆角，底部贴合屏幕边缘 -->
+    <style name="ShapeAppearance.App.BottomSheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/radius_xl</item>
+        <item name="cornerSizeTopRight">@dimen/radius_xl</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         按钮
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <!-- 主要按钮：实心填充，品牌 600 背景，白色文字 -->
+    <style name="Widget.App.Button.Primary" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/height_button_default</item>
+        <item name="android:textSize">@dimen/text_button</item>
+        <item name="android:paddingStart">@dimen/padding_button_horizontal</item>
+        <item name="android:paddingEnd">@dimen/padding_button_horizontal</item>
+        <item name="backgroundTint">@color/btn_primary_bg</item>
+        <item name="android:textColor">@color/btn_primary_text</item>
+        <item name="cornerRadius">@dimen/radius_sm</item>
+        <item name="rippleColor">@color/ripple_light</item>
+        <!-- 禁用按压阴影抬升动画，保持 flat 风格 <item name="android:stateListAnimator">@null</item>-->
+
+    </style>
+
+    <!-- 次要按钮：描边样式，透明背景，品牌色文字和边框 -->
+    <style name="Widget.App.Button.Secondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">@dimen/height_button_default</item>
+        <item name="android:textSize">@dimen/text_button</item>
+        <item name="android:paddingStart">@dimen/padding_button_horizontal</item>
+        <item name="android:paddingEnd">@dimen/padding_button_horizontal</item>
+        <item name="strokeColor">?attr/colorPrimary</item>
+        <item name="strokeWidth">@dimen/stroke_default</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="cornerRadius">@dimen/radius_sm</item>
+        <item name="rippleColor">?attr/colorPrimaryContainer</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- 文字按钮：无背景无边框，最低视觉优先级 -->
+    <style name="Widget.App.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:minHeight">@dimen/height_button_default</item>
+        <item name="android:textSize">@dimen/text_button</item>
+        <item name="android:textColor">@color/brand_600</item>
+        <item name="cornerRadius">@dimen/radius_sm</item>
+        <item name="rippleColor">@color/brand_50</item>
+    </style>
+
+    <!-- 危险按钮：用于删除等不可逆操作 -->
+    <style name="Widget.App.Button.Danger" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/height_button_default</item>
+        <item name="android:textSize">@dimen/text_button</item>
+        <item name="backgroundTint">@color/error_600</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">@dimen/radius_sm</item>
+        <item name="rippleColor">@color/ripple_light</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         输入框
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <!--
+        描边输入框：默认样式。
+        如需聚焦时自动变色，需在 res/color/input_stroke_color.xml
+        中定义 ColorStateList：
+          <selector>
+            <item android:state_focused="true"  android:color="@color/brand_600"/>
+            <item android:state_hovered="true"  android:color="@color/light_border_strong"/>
+            <item android:color="@color/light_border_default"/>
+          </selector>
+        然后将 boxStrokeColor 改为 @color/input_stroke_color。
+    -->
+    <style name="Widget.App.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/light_bg_card</item>
+        <item name="boxStrokeColor">@color/brand_600</item>
+        <item name="boxStrokeWidth">@dimen/stroke_default</item>
+        <item name="boxStrokeWidthFocused">@dimen/stroke_emphasis</item>
+        <item name="boxCornerRadiusTopStart">@dimen/radius_xs</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/radius_xs</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/radius_xs</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/radius_xs</item>
+        <item name="hintTextColor">@color/light_text_hint</item>
+        <item name="android:minHeight">@dimen/height_input_default</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         卡片
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <!-- 标准卡片：白色背景，细描边，无阴影  -->
+    <style name="Widget.App.Card" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">@color/light_bg_card</item>
+        <item name="strokeColor">@color/light_border_default</item>
+        <item name="strokeWidth">@dimen/elevation_none</item>
+        <item name="cardCornerRadius">@dimen/radius_lg</item>
+        <item name="cardElevation">@dimen/elevation_none</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- 界面层卡片：米色背景，用于页面内嵌区块 -->
+    <style name="Widget.App.Card.Surface" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/light_bg_surface</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="cardCornerRadius">@dimen/radius_lg</item>
+        <item name="cardElevation">@dimen/elevation_none</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         Chip
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <!--
+        过滤 Chip：未选中为中性灰，选中翻转为品牌色。
+        如需选中态自动切换颜色，可将 chipBackgroundColor 和
+        android:textColor 替换为 res/color/ 目录下的 ColorStateList。
+    -->
+    <style name="Widget.App.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="android:minHeight">@dimen/height_chip</item>
+        <item name="android:textSize">@dimen/text_label</item>
+        <item name="chipCornerRadius">@dimen/radius_pill</item>
+        <item name="chipBackgroundColor">@color/neutral_50</item>
+        <item name="android:textColor">@color/light_text_secondary</item>
+        <item name="chipStrokeColor">@color/light_border_default</item>
+        <item name="chipStrokeWidth">@dimen/stroke_hairline</item>
+        <item name="rippleColor">@color/brand_50</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         底部导航栏
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <style name="Widget.App.BottomNav" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/light_bg_card</item>
+        <!-- 选中与未选中颜色建议用 res/color/bottom_nav_color.xml 管理 -->
+        <item name="itemIconTint">@color/brand_600</item>
+        <item name="itemTextColor">@color/brand_600</item>
+        <!-- 选中项指示器背景：品牌 50 级 -->
+
+        <item name="android:elevation">@dimen/elevation_none</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         顶部应用栏 <item name="android:background">@color/light_bg_page</item>
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <style name="Widget.App.TopAppBar" parent="Widget.Material3.Toolbar.OnSurface">
+        <item name="titleTextColor">@color/light_text_primary</item>
+        <item name="android:elevation">@dimen/elevation_none</item>
+        <!-- 关闭滚动时的阴影抬升，保持 flat 风格 -->
+        <item name="liftOnScroll">false</item>
+
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         底部弹窗 Widget
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <style name="Widget.App.BottomSheet" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">@color/light_bg_card</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.BottomSheet</item>
+        <item name="android:elevation">@dimen/elevation_bottom_sheet</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         进度指示器
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <!-- 线性进度条：轨道 50 + 填充 600 -->
+    <style name="Widget.App.Progress.Linear" parent="Widget.Material3.LinearProgressIndicator">
+        <item name="indicatorColor">@color/brand_600</item>
+        <item name="trackColor">@color/brand_50</item>
+        <item name="trackCornerRadius">@dimen/radius_pill</item>
+        <item name="trackThickness">6dp</item>
+    </style>
+
+    <!-- 圆形进度条 -->
+    <style name="Widget.App.Progress.Circular" parent="Widget.Material3.CircularProgressIndicator">
+        <item name="indicatorColor">@color/brand_600</item>
+        <item name="trackColor">@color/brand_50</item>
+        <item name="trackThickness">3dp</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         局部语义状态覆盖（ThemeOverlay）
+         用法：android:theme="@style/ThemeOverlay.App.Success"
+         只包裹需要改色的局部 ViewGroup 即可，无需创建独立 Activity 主题。
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <style name="ThemeOverlay.App.Success" parent="">
+        <item name="colorPrimary">@color/success_600</item>
+        <item name="colorPrimaryContainer">@color/success_50</item>
+        <item name="colorOnPrimaryContainer">@color/success_800</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Warning" parent="">
+        <item name="colorPrimary">@color/warning_600</item>
+        <item name="colorPrimaryContainer">@color/warning_50</item>
+        <item name="colorOnPrimaryContainer">@color/warning_800</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Error" parent="">
+        <item name="colorPrimary">@color/error_600</item>
+        <item name="colorPrimaryContainer">@color/error_50</item>
+        <item name="colorOnPrimaryContainer">@color/error_800</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Info" parent="">
+        <item name="colorPrimary">@color/info_600</item>
+        <item name="colorPrimaryContainer">@color/info_50</item>
+        <item name="colorOnPrimaryContainer">@color/info_800</item>
+    </style>
+</resources>

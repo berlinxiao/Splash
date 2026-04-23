@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/skeleton_gradient">
+
+    <!-- 告诉系统：让名为 shimmer_group 的图层，去执行 shimmer_anim 动画 -->
+    <target
+        android:name="shimmer_group"
+        android:animation="@animator/shimmer_anim" />
+
+</animated-vector>

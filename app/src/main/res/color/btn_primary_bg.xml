@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+        禁用态：colorOnSurface 的 12% 不透明度作为背景
+        这是 Material3 规范的标准禁用背景。
+        alpha 属性在 API 23+ 有效。
+    -->
+    <!-- 按下态：800级，加深反馈 -->
+    <item android:state_pressed="true"  android:color="?attr/colorOnPrimaryContainer" />
+
+    <item android:state_enabled="false"
+        android:alpha="0.12"
+        android:color="?attr/colorOnSurface" />
+    <!-- 默认态：跟随 colorPrimary，深浅模式自动切换 -->
+    <item android:color="?attr/colorPrimary" />
+</selector>

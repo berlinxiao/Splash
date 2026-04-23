@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- 覆盖 getExternalCacheDir()，下载缓存目录 -->
+    <external-cache-path
+        name="external_cache"
+        path="." />
+
+    <!-- 覆盖 Pictures/Splash/，Android 6-9 查看图片需要 -->
+    <external-path
+        name="external_pictures"
+        path="Pictures/Splash/" />
+</paths>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- 1. 底色：浅灰色的圆角背景 (M3 规范通常使用 Neutral Variant 颜色) -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M0,0 h200 v200 h-200 z" />
+
+    <!-- 2. 扫光层：定义一个 group 并命名，方便后续用动画控制它的 X 轴移动 -->
+    <group
+        android:name="shimmer_group"
+        android:translateX="-200">
+        <!-- 这个 path 画的是一个覆盖着白色渐变的矩形 -->
+        <path android:pathData="M0,0 h200 v200 h-200 z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:endX="200" android:endY="0"
+                    android:startX="0" android:startY="0"
+                    android:type="linear">
+                    <!-- 左侧全透明 -->
+                    <item android:color="#00FFFFFF" android:offset="0" />
+                    <!-- 中间半透明纯白，形成高光 -->
+                    <item android:color="#80FFFFFF" android:offset="0.5" />
+                    <!-- 右侧全透明 -->
+                    <item android:color="#00FFFFFF" android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group>
+</vector>

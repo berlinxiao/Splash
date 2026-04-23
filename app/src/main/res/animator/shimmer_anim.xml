@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 控制组的 translateX 属性，从左侧 -200 移动到右侧 200，无限循环 -->
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="1200"
+    android:propertyName="translateX"
+    android:repeatCount="infinite"
+    android:repeatMode="restart"
+    android:valueFrom="-200"
+    android:valueTo="200"
+    android:valueType="floatType" />

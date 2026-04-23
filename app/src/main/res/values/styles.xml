@@ -1,81 +1,73 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorMyBlue</item>
-        <item name="colorPrimaryDark">@color/colorMyWhite</item>
-        <item name="colorAccent">@color/colorMyBlack</item>
-
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-
-        <item name="TitleTexts">@color/colorAppleDarkGray5</item>
-        <item name="SecondaryTexts">@color/colorAppleLightGray2</item>
-        <item name="UserBackground">@color/colorAppleLightGray6</item>
-        <item name="UserLineStroke">@color/colorAppleLightGray5</item>
-        <item name="ShapeBackground">#FFF</item>
-        <item name="RippleItemColor">@color/colorAppleLightGray5</item>
-        <item name="backgroundColor">@color/colorAppleLightGray6</item>
-        <!--状态栏白底黑字-->
-        <item name="android:windowLightStatusBar">true</item>
-
-        <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
-        <!--状态栏透明
-        <item name="android:windowTranslucentStatus">false</item>
-        <item name="android:windowTranslucentNavigation">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        -->
-
-        <!--允许过渡动画-->
-        <item name="android:windowContentTransitions">true</item>
-        <!-- enable window content transitions -->
-        <item name="android:windowActivityTransitions">true</item>
-        <!--防止闪屏<item name="android:windowBackground">@color/colorMyWhite</item>-->
+    <!--show_photo内的exif信息调用-->
+    <style name="CameraRow"> <!--包裹-->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    <style name="CameraLabel"> <!--大标题-->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:layout_alignParentStart">true</item>
+    </style>
+    <style name="CameraValue"> <!--小标题-->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:layout_alignParentEnd">true</item>
+    </style>
+    <style name="CameraSeparator"> <!--分割线-->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?attr/colorOutlineVariant</item>
     </style>
 
-    <style name="AppTheme.Dark" parent="Theme.AppCompat.NoActionBar">
-        <item name="colorPrimary">@color/colorMyBlue</item>
-        <item name="colorPrimaryDark">@color/colorMyBlack</item>
-        <item name="colorAccent">@color/colorMyWhite</item>
-
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowLightStatusBar">false</item>
-
-        <!--防止闪屏-->
-        <item name="android:windowBackground">@color/colorMyBlack</item>
-
-        <item name="TitleTexts">@color/colorAppleLightGray5</item>
-        <item name="SecondaryTexts">@color/colorAppleDarkGray2</item>
-        <item name="UserBackground">@color/colorAppleDarkGray6</item>
-        <item name="UserLineStroke">@color/colorAppleDarkGray5</item>
-        <item name="ShapeBackground">@color/colorAppleDarkGray6</item>
-        <item name="backgroundColor">@color/colorMyBlack</item>
-        <item name="RippleItemColor">@color/colorAppleDarkGray4</item>
-        <!--Toolbar icon的颜色-->
-        <item name="toolbarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
-        <item name="alertDialogTheme">@style/SplashDialogTheme_dark</item>
+    <!--fragment_set内用 <item name="cardCornerRadius">@dimen/space_5</item>-->
+    <style name="SetCardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/space_2</item>
+        <item name="cardElevation">@dimen/space_1</item>
+    </style>
+    <style name="SetTextTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/space_5</item>
+        <item name="android:layout_marginStart">@dimen/space_3</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="SetTextContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/space_2</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+    <style name="SetTextDescription">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/space_2</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="SetCardViewSelect">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/space_16</item>
+        <item name="android:paddingStart">@dimen/space_5</item>
+        <item name="android:paddingEnd">@dimen/space_5</item>
+        <item name="android:background">?attr/colorOnPrimary</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
     </style>
 
-    <style name="SplashDialogTheme_dark" parent="Theme.AppCompat.Dialog">
-        <item name="android:windowBackground">@color/colorAppleDarkGray5</item>
-        <!--按钮颜色-->
-        <item name="colorAccent">@color/colorMyWhite</item>
-        <!--Radio颜色-->
-        <item name="colorControlNormal">@color/colorMyWhite</item>
-        <item name="colorControlActivated">@color/colorMyWhite</item>
+    <style name="PopupFadeAnim" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/popup_exit</item>
     </style>
 
-    <style name="AppTheme.Show" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">false</item>
-        <item name="ShowTitle">@color/colorMyBlack</item>
-        <item name="ShowSecondary">@color/colorAppleLightGray2</item>
-        <item name="ShowShape">@color/colorMyWhite</item>
-    </style>
-    <style name="AppTheme.Show.Dark" parent="AppTheme.Show">
-        <item name="ShowTitle">@color/colorMyWhite</item>
-        <item name="ShowSecondary">@color/colorAppleDarkGray2</item>
-        <item name="ShowShape">@color/colorMyBlack</item>
-    </style>
+
 </resources>

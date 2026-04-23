@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- 全局配置 -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <!-- 只信任系统预装的证书，不信任用户手动安装的抓包证书 -->
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    <!-- 如果你需要针对特定域名放行（例如调试环境）
+         <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">test.example.com</domain>
+    </domain-config>
+     -->
+</network-security-config>

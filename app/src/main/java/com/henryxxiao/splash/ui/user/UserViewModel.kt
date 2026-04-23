@@ -1,36 +1,49 @@
-package com.henryxxiao.splash.ui.user;
+package com.henryxxiao.splash.ui.user
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Transformations;
-import androidx.lifecycle.ViewModel;
-import androidx.paging.LivePagedListBuilder;
-import androidx.paging.PagedList;
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import com.henryxxiao.splash.data.SplashPhoto
+import com.henryxxiao.splash.repository.LoadPhotoPagingSource
+import com.henryxxiao.splash.repository.RetrofitClient
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.flatMapLatest
 
-import com.henryxxiao.splash.data.SplashPhoto;
-import com.henryxxiao.splash.repository.LoadPhotoDataSource;
-import com.henryxxiao.splash.repository.LoadPhotoDataSourceFactory;
-import com.henryxxiao.splash.repository.LoadStatus;
-
-/*
-这里使用AndroidViewModel 而不是 ViewModel
-因为需要getApplicationContext来访问SharedPreferences
+/**
+ * 个人主页专用的 ViewModel
+ * 职责：接收特定用户名/端点，提供该用户的照片流
  */
+class UserViewModel : ViewModel() {
 
-public class UserViewModel extends ViewModel {
-    public LiveData<PagedList<SplashPhoto>> photoList;
-    public LiveData<LoadStatus> loadStatus;
+    private val apiService = RetrofitClient.apiService
 
-    public void userViewModel(String type){
-        LoadPhotoDataSourceFactory loadPhotoDataSourceFactory = new LoadPhotoDataSourceFactory();
-        loadPhotoDataSourceFactory.setType(type);
+    // 状态流：记录当前的加载路径
+    private val endpointFlow = MutableStateFlow<String?>(null)
 
-        loadStatus = Transformations.switchMap(loadPhotoDataSourceFactory.liveData, LoadPhotoDataSource::getStatus);
-        PagedList.Config config = (new PagedList.Config.Builder())
-                .setEnablePlaceholders(false)
-                .setPageSize(10)
-                .build();
-
-        photoList = (new LivePagedListBuilder(loadPhotoDataSourceFactory, config)).build();
+    /**
+     * 触发加载，传入要加载的 type 路径，例如调用时传入： "users/milad/photos"
+     */
+    fun loadUserPhotos(type: String) {
+        endpointFlow.value = type
     }
 
+    /**
+     * 核心 Paging 数据流 只有当 endpointFlow 收到了真实的值（不是null）时才开始触发网络请求。
+     */
+    @OptIn(ExperimentalCoroutinesApi::class)
+    val photosFlow: Flow<PagingData<SplashPhoto>> = endpointFlow
+        .filterNotNull() // 过滤掉初始的空值
+        .flatMapLatest { endpoint ->
+            Pager(
+                config = PagingConfig(pageSize = 10, enablePlaceholders = false),
+                pagingSourceFactory = { LoadPhotoPagingSource(apiService, endpoint) }
+            ).flow
+        }
+        .cachedIn(viewModelScope)
 }

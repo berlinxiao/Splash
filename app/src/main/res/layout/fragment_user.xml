@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.user.UserFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/user_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/user_collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="24dp"
+                app:layout_collapseMode="parallax">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton"
+                        android:id="@+id/user_btn_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        android:padding="0dp"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:layout_alignParentStart="true"
+                        app:iconSize="@dimen/space_6"
+                        app:icon="@drawable/ic_back"
+                        app:iconTint="?attr/colorOnSurfaceVariant"
+                        android:contentDescription="@string/describe_back" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton"
+                        android:id="@+id/user_btn_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        android:padding="0dp"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        app:iconSize="@dimen/space_6"
+                        android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/describe_icon"
+                        app:iconTint="?attr/colorOnSurfaceVariant"
+                        app:icon="@drawable/ic_share"
+                        tools:ignore="RelativeOverlap" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/user_imageView_head"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="@string/describe_show_head"
+                    android:scaleType="centerCrop"
+                    tools:src="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/user_textView_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:gravity="center"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textIsSelectable="true"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    tools:text="@string/app_name" />
+
+                <TextView
+                    android:id="@+id/user_textView_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="14sp"
+                    tools:text="splash" />
+
+                <TextView
+                    android:id="@+id/user_textView_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:textIsSelectable="true"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="14sp"
+                    tools:text="Transylvania, Romania" />
+
+                <TextView
+                    android:id="@+id/user_textView_bio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:textIsSelectable="true"
+                    android:gravity="center"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="14sp"
+                    tools:text="Visual Artist / 3D Designer from Istanbul.\nCreating abstract dimensions." />
+
+                <LinearLayout
+                    android:id="@+id/user_LinearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/user_textView_photos_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            tools:text="243" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/user_photos"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/user_textView_likes_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            tools:text="12.4k" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/user_likes"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/user_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="fill"
+            app:tabMode="fixed">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/user_photos" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/user_likes" />
+        </com.google.android.material.tabs.TabLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/user_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

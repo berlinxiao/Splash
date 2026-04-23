@@ -4,42 +4,189 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
 
-    <color name="colorMyWhite">#f9fafb</color>
-    <color name="colorMyBlack">#0b0b0c</color>
     <color name="colorMyBlue">#007fff</color>
     <color name="colorMyBlue2">#cce6ff</color>
-    <color name="colorGradientOverlay">#44000000</color>
+    <color name="colorGradientOverlay">#50000000</color>
 
-    <color name="colorMaterialLightGray">#202021</color>
-    <color name="colorMaterialLightGray2">#414142</color>
-    <color name="colorMaterialLightGray3">#5f6061</color>
-    <color name="colorMaterialLightGray4">#737475</color>
-    <color name="colorMaterialLightGray5">#9c9d9e</color>
-    <color name="colorMaterialLightGray6">#bbbcbd</color>
-    <color name="colorMaterialLightGray7">#dedfe0</color>
-    <color name="colorMaterialLightGray8">#edeeef</color>
-    <color name="colorMaterialLightGray9">#f4f5f6</color>
-    <color name="colorMaterialDarkGray">#2c2c2d</color>
-    <color name="colorMaterialDarkGray2">#4a4a4b</color>
-    <color name="colorMaterialDarkGray3">#5d5d5d</color>
-    <color name="colorMaterialDarkGray4">#838384</color>
-    <color name="colorMaterialDarkGray5">#a5a5a6</color>
-    <color name="colorMaterialDarkGray6">#cacacb</color>
-    <color name="colorMaterialDarkGray7">#dededf</color>
-    <color name="colorMaterialDarkGray8">#ececec</color>
+    <color name="my_yellow">#FFEB3B</color>
+    <color name="my_orange">#FF9800</color>
+    <color name="my_red">#F44336</color>
+    <color name="my_purple">#9C27B0</color>
+    <color name="my_magenta">#E91E63</color>
+    <color name="my_green">#4CAF50</color>
+    <color name="my_teal">#009688</color>
+    <color name="my_blue">#2196F3</color>
 
-    <color name="colorAppleGray">#8e8e93</color>
-    <color name="colorAppleLightGray2">#aeaeb2</color>
-    <color name="colorAppleLightGray3">#c7c7cc</color>
-    <color name="colorAppleLightGray4">#d1d1d6</color>
-    <color name="colorAppleLightGray5">#e5e5ea</color>
-    <color name="colorAppleLightGray6">#f2f2f7</color>
-    <color name="colorAppleDarkGray2">#636366</color>
-    <color name="colorAppleDarkGray3">#48484a</color>
-    <color name="colorAppleDarkGray4">#3a3a3c</color>
-    <color name="colorAppleDarkGray5">#2c2c2e</color>
-    <color name="colorAppleDarkGray6">#1c1c1e</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 
-    <color name="colorShow_done">#34c759</color>
-    <color name="colorShow_error">#ff3b30</color>
+    <!-- ======================================================= -->
+    <!--  BRAND / PRIMARY — 品牌/主题                          -->
+    <!-- ======================================================= -->
+    <color name="brand_50">#EEEDFE</color>
+    <color name="brand_100">#CECBF6</color>
+    <color name="brand_200">#AFA9EC</color>
+    <color name="brand_400">#7F77DD</color>
+    <color name="brand_600">#534AB7</color>
+    <color name="brand_800">#3C3489</color>
+    <color name="brand_900">#26215C</color>
+
+    <!-- ======================================================= -->
+    <!--  SUCCESS — 成功                                    -->
+    <!-- ======================================================= -->
+    <color name="success_50">#E1F5EE</color>
+    <color name="success_100">#9FE1CB</color>
+    <color name="success_200">#5DCAA5</color>
+    <color name="success_400">#1D9E75</color>
+    <color name="success_600">#0F6E56</color>
+    <color name="success_800">#085041</color>
+    <color name="success_900">#04342C</color>
+
+    <!-- ======================================================= -->
+    <!--  WARNING — 警告                                   -->
+    <!-- ======================================================= -->
+    <color name="warning_50">#FAEEDA</color>
+    <color name="warning_100">#FAC775</color>
+    <color name="warning_200">#EF9F27</color>
+    <color name="warning_400">#BA7517</color>
+    <color name="warning_600">#854F0B</color>
+    <color name="warning_800">#633806</color>
+    <color name="warning_900">#412402</color>
+
+    <!-- ======================================================= -->
+    <!--  ERROR / DANGER — 错误                              -->
+    <!-- ======================================================= -->
+    <color name="error_50">#FCEBEB</color>
+    <color name="error_100">#F7C1C1</color>
+    <color name="error_200">#F09595</color>
+    <color name="error_400">#E24B4A</color>
+    <color name="error_600">#A32D2D</color>
+    <color name="error_800">#791F1F</color>
+    <color name="error_900">#501313</color>
+
+    <!-- ======================================================= -->
+    <!--  NEUTRAL — 中性                                    -->
+    <!-- ======================================================= -->
+    <color name="neutral_50">#F1EFE8</color>
+    <color name="neutral_100">#D3D1C7</color>
+    <color name="neutral_200">#B4B2A9</color>
+    <color name="neutral_400">#888780</color>
+    <color name="neutral_600">#5F5E5A</color>
+    <color name="neutral_800">#444441</color>
+    <color name="neutral_900">#2C2C2A</color>
+
+    <!-- ======================================================= -->
+    <!--  INFO — 信息                                       -->
+    <!-- ======================================================= -->
+    <color name="info_50">#E6F1FB</color>
+    <color name="info_100">#B5D4F4</color>
+    <color name="info_200">#85B7EB</color>
+    <color name="info_400">#378ADD</color>
+    <color name="info_600">#185FA5</color>
+    <color name="info_800">#0C447C</color>
+    <color name="info_900">#042C53</color>
+
+    <!-- ======================================================= -->
+    <!--  CORAL ramp (accent / secondary brand)   （点缀色 / 副品牌色）               -->
+    <!-- ======================================================= -->
+    <color name="coral_50">#FAECE7</color>
+    <color name="coral_100">#F5C4B3</color>
+    <color name="coral_200">#F0997B</color>
+    <color name="coral_400">#D85A30</color>
+    <color name="coral_600">#993C1D</color>
+    <color name="coral_800">#712B13</color>
+    <color name="coral_900">#4A1B0C</color>
+
+    <!-- ======================================================= -->
+    <!--  LIGHT MODE —                    -->
+    <!-- ======================================================= -->
+
+    <!-- Backgrounds -->
+    <color name="light_bg_page">#FAFAF8</color>
+    <color name="light_bg_surface">#F1EFE8</color>
+    <color name="light_bg_card">#FFFFFF</color>
+    <color name="light_bg_overlay">#FFFFFF</color>  <!-- dialogs, bottom sheets -->
+
+    <!-- Borders / Dividers 边框 / 分隔线 -->
+    <color name="light_border_subtle">#E8E6DC</color>   <!-- hairline / tertiary 极细线 / 第三级 -->
+    <color name="light_border_default">#D3D1C7</color>  <!-- standard card border 标准卡片边框 -->
+    <color name="light_border_strong">#B4B2A9</color>   <!-- emphasized separator 加重分隔线 -->
+
+    <!-- Text -->
+    <color name="light_text_primary">#1A1A18</color>
+    <color name="light_text_secondary">#5F5E5A</color>
+    <color name="light_text_hint">#888780</color>
+    <color name="light_text_disabled">#B4B2A9</color>
+    <color name="light_text_on_primary">#FFFFFF</color>  <!-- white text on brand_600 -->
+
+    <!-- Interactive 交互 -->
+    <color name="light_action_primary">#534AB7</color>       <!-- brand_600 -->
+    <color name="light_action_primary_pressed">#3C3489</color> <!-- brand_800 -->
+    <color name="light_action_secondary">#F1EFE8</color>
+    <color name="light_action_secondary_pressed">#D3D1C7</color>
+
+    <!-- Semantic fills (tinted backgrounds for badges, toasts, etc.) 语义填充（徽章、提示等的彩色背景） -->
+    <color name="light_fill_success">#E1F5EE</color>
+    <color name="light_fill_warning">#FAEEDA</color>
+    <color name="light_fill_error">#FCEBEB</color>
+    <color name="light_fill_info">#E6F1FB</color>
+    <color name="light_fill_brand">#EEEDFE</color>
+
+    <!-- Semantic text (on tinted fills) 语义文本（关于着色填充） -->
+    <color name="light_text_success">#085041</color>  <!-- success_800 -->
+    <color name="light_text_warning">#633806</color>  <!-- warning_800 -->
+    <color name="light_text_error">#791F1F</color>    <!-- error_800   -->
+    <color name="light_text_info">#0C447C</color>     <!-- info_800    -->
+    <color name="light_text_brand">#3C3489</color>    <!-- brand_800   -->
+
+    <!-- ======================================================= -->
+    <!--  DARK MODE               -->
+    <!-- ======================================================= -->
+
+    <!-- Backgrounds -->
+    <color name="dark_bg_page">#111110</color>
+    <color name="dark_bg_surface">#1C1C1A</color>
+    <color name="dark_bg_card">#242422</color>
+    <color name="dark_bg_overlay">#2E2E2B</color>     <!-- dialogs, bottom sheets -->
+
+    <!-- Borders / Dividers -->
+    <color name="dark_border_subtle">#2A2A28</color>   <!-- hairline / tertiary -->
+    <color name="dark_border_default">#3A3A37</color>  <!-- standard card border -->
+    <color name="dark_border_strong">#4A4A47</color>   <!-- emphasized separator -->
+
+    <!-- Text -->
+    <color name="dark_text_primary">#E8E6DC</color>
+    <color name="dark_text_secondary">#888780</color>
+    <color name="dark_text_hint">#5F5E5A</color>
+    <color name="dark_text_disabled">#444441</color>
+    <color name="dark_text_on_primary">#1C1C1A</color>  <!-- dark text on light brand fill -->
+
+    <!-- Interactive -->
+    <color name="dark_action_primary">#7F77DD</color>       <!-- brand_400 — 1-2 stops lighter for dark bg -->
+    <color name="dark_action_primary_pressed">#AFA9EC</color> <!-- brand_200 -->
+    <color name="dark_action_secondary">#2E2E2B</color>
+    <color name="dark_action_secondary_pressed">#3A3A37</color>
+
+    <!-- Semantic fills (dark-mode badge / toast backgrounds) -->
+    <color name="dark_fill_success">#085041</color>   <!-- success_800 -->
+    <color name="dark_fill_warning">#633806</color>   <!-- warning_800 -->
+    <color name="dark_fill_error">#791F1F</color>     <!-- error_800   -->
+    <color name="dark_fill_info">#0C447C</color>      <!-- info_800    -->
+    <color name="dark_fill_brand">#26215C</color>     <!-- brand_900   -->
+
+    <!-- Semantic text (on dark tinted fills — use light stops) -->
+    <color name="dark_text_success">#9FE1CB</color>  <!-- success_100 -->
+    <color name="dark_text_warning">#FAC775</color>  <!-- warning_100 -->
+    <color name="dark_text_error">#F7C1C1</color>    <!-- error_100   -->
+    <color name="dark_text_info">#B5D4F4</color>     <!-- info_100    -->
+    <color name="dark_text_brand">#CECBF6</color>    <!-- brand_100   -->
+
+    <!-- ======================================================= -->
+    <!--  TRANSPARENCY UTILITIES                                 -->
+    <!-- ======================================================= -->
+    <color name="scrim_light">#80000000</color>   <!-- 50% black — modal backdrop -->
+    <color name="scrim_dark">#99000000</color>    <!-- 60% black — heavier overlay -->
+    <color name="ripple_light">#1A000000</color>  <!-- 10% black ripple on light surfaces -->
+    <color name="ripple_dark">#1AFFFFFF</color>   <!-- 10% white ripple on dark surfaces -->
+    <color name="transparent">#00000000</color>
 </resources>

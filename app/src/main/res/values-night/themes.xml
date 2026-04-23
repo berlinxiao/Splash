@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- ────────────────────────────────────────────────────────
+             主色：深色模式提亮到 400 级。
+             600 在深色背景上偏暗，400 保持对比度且不刺眼。
+        ──────────────────────────────────────────────────────────── -->
+        <item name="colorPrimary">@color/brand_400</item>
+        <!-- 深色模式按钮文字改为深色（与亮色填充形成对比）-->
+        <item name="colorOnPrimary">@color/dark_text_on_primary</item>
+        <!-- 容器背景翻转：50 → 900 -->
+        <item name="colorPrimaryContainer">@color/brand_900</item>
+        <!-- 容器文字翻转：800 → 100 -->
+        <item name="colorOnPrimaryContainer">@color/brand_100</item>
+
+
+        <!-- 次要色 -->
+        <item name="colorSecondary">@color/info_400</item>
+        <item name="colorOnSecondary">@color/dark_text_on_primary</item>
+        <item name="colorSecondaryContainer">@color/info_900</item>
+        <item name="colorOnSecondaryContainer">@color/info_100</item>
+
+        <!-- 第三色 -->
+        <item name="colorTertiary">@color/success_400</item>
+        <item name="colorOnTertiary">@color/dark_text_on_primary</item>
+        <item name="colorTertiaryContainer">@color/success_900</item>
+        <item name="colorOnTertiaryContainer">@color/success_100</item>
+
+        <!-- 错误色：深色模式也提亮，与深背景保持可读性 -->
+        <item name="colorError">@color/error_400</item>
+        <item name="colorOnError">@color/dark_text_on_primary</item>
+        <item name="colorErrorContainer">@color/error_900</item>
+        <item name="colorOnErrorContainer">@color/error_100</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             背景（3层深色层次）
+             深色模式不使用纯黑，而是用近黑的暖灰色系：
+               页面背景 #111110 → Surface #242422 → 弹层 #2E2E2B
+             层次差异通过明度区分，而非颜色种类。
+        ──────────────────────────────────────────────────────────── -->
+        <item name="android:colorBackground">@color/dark_bg_page</item>
+        <item name="colorOnBackground">@color/dark_text_primary</item>
+
+        <!-- Surface：卡片、对话框的背景，比页面略浅一级 -->
+        <item name="colorSurface">@color/dark_bg_card</item>
+        <item name="colorOnSurface">@color/dark_text_primary</item>
+        <!-- 次要文字：中灰，在深背景上比主文字低一个层级 -->
+        <item name="colorOnSurfaceVariant">@color/dark_text_secondary</item>
+        <!-- Surface 变体：列表背景、嵌套容器 -->
+        <item name="colorSurfaceVariant">@color/dark_text_disabled</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             深色模式描边
+             必须使用浅色描边才能在深色面上显现。
+             deep_border_default 对应 neutral 200 级附近的浅灰。
+        ──────────────────────────────────────────────────────────── -->
+        <item name="colorOutline">@color/dark_border_default</item>
+        <item name="colorOutlineVariant">@color/dark_border_subtle</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             系统栏：深色背景下改用浅色图标
+        ──────────────────────────────────────────────────────────── -->
+        <item name="android:statusBarColor">@color/dark_bg_page</item>
+        <!-- false = 使用浅色（白色）状态栏图标 -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/dark_bg_page</item>
+
+        <!-- ────────────────────────────────────────────────────────
+             组件样式覆盖（深色版本）
+        ──────────────────────────────────────────────────────────── -->
+        <item name="materialButtonStyle">@style/Widget.App.Button.Primary</item>
+        <item name="borderlessButtonStyle">@style/Widget.App.Button.Text</item>
+        <item name="materialCardViewStyle">@style/Widget.App.Card</item>
+        <item name="textInputStyle">@style/Widget.App.TextInput</item>
+        <item name="chipStyle">@style/Widget.App.Chip</item>
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNav</item>
+        <item name="toolbarStyle">@style/Widget.App.TopAppBar</item>
+        <item name="linearProgressIndicatorStyle">@style/Widget.App.Progress.Linear</item>
+        <item name="circularProgressIndicatorStyle">@style/Widget.App.Progress.Circular</item>
+
+    </style>
+
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         对话框深色模式
+    ══════════════════════════════════════════════════════════════════ -->
+    <style name="Theme.App.Dialog" parent="Theme.Material3.DayNight.Dialog">
+        <item name="colorPrimary">@color/brand_400</item>
+        <!-- 对话框背景比页面略浅，形成浮层感 -->
+        <item name="colorSurface">@color/dark_bg_card</item>
+        <item name="colorOnSurface">@color/dark_text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/dark_text_secondary</item>
+        <item name="dialogCornerRadius">@dimen/radius_xl</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         底部弹窗深色模式
+    ══════════════════════════════════════════════════════════════════ -->
+    <style name="Theme.App.BottomSheet" parent="Theme.Material3.DayNight.BottomSheetDialog">
+        <item name="colorPrimary">@color/brand_400</item>
+        <item name="colorSurface">@color/dark_bg_card</item>
+        <item name="colorOnSurface">@color/dark_text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/dark_text_secondary</item>
+        <item name="bottomSheetStyle">@style/Widget.App.BottomSheet</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         按钮深色模式
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <!-- 主要按钮：提亮到 400，文字改为深色 -->
+    <style name="Widget.App.Button.Primary" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/height_button_default</item>
+        <item name="android:textSize">@dimen/text_button</item>
+        <item name="android:paddingStart">@dimen/padding_button_horizontal</item>
+        <item name="android:paddingEnd">@dimen/padding_button_horizontal</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <!-- 深色模式下亮色按钮配深色文字 -->
+        <item name="android:textColor">@color/dark_text_on_primary</item>
+        <item name="cornerRadius">@dimen/radius_sm</item>
+        <item name="rippleColor">@color/ripple_dark</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- 次要按钮：描边改为 200 级（浅色，在深背景上可见）-->
+    <style name="Widget.App.Button.Secondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">@dimen/height_button_default</item>
+        <item name="android:textSize">@dimen/text_button</item>
+        <item name="android:paddingStart">@dimen/padding_button_horizontal</item>
+        <item name="android:paddingEnd">@dimen/padding_button_horizontal</item>
+        <item name="strokeColor">?attr/colorPrimary</item>
+        <item name="strokeWidth">@dimen/stroke_default</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="cornerRadius">@dimen/radius_sm</item>
+        <item name="rippleColor">?attr/colorPrimaryContainer</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- 文字按钮 -->
+    <style name="Widget.App.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:minHeight">@dimen/height_button_default</item>
+        <item name="android:textSize">@dimen/text_button</item>
+        <item name="android:textColor">@color/brand_200</item>
+        <item name="cornerRadius">@dimen/radius_sm</item>
+        <item name="rippleColor">@color/brand_900</item>
+    </style>
+
+    <!-- 危险按钮 -->
+    <style name="Widget.App.Button.Danger" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/height_button_default</item>
+        <item name="android:textSize">@dimen/text_button</item>
+        <item name="backgroundTint">@color/error_400</item>
+        <item name="android:textColor">@color/dark_text_on_primary</item>
+        <item name="cornerRadius">@dimen/radius_sm</item>
+        <item name="rippleColor">@color/ripple_dark</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         输入框深色模式
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <style name="Widget.App.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <!-- 深色输入框背景 -->
+        <item name="boxBackgroundColor">@color/dark_bg_card</item>
+        <!-- 聚焦描边提亮到 400 -->
+        <item name="boxStrokeColor">@color/brand_400</item>
+        <item name="boxStrokeWidth">@dimen/stroke_default</item>
+        <item name="boxStrokeWidthFocused">@dimen/stroke_emphasis</item>
+        <item name="boxCornerRadiusTopStart">@dimen/radius_xs</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/radius_xs</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/radius_xs</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/radius_xs</item>
+        <!-- hint 文字用深色模式提示色 -->
+        <item name="hintTextColor">@color/dark_text_hint</item>
+        <item name="android:minHeight">@dimen/height_input_default</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         卡片深色模式
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <style name="Widget.App.Card" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">@color/dark_bg_card</item>
+        <!-- 深色模式描边必须用浅色才能可见 -->
+        <item name="strokeColor">@color/dark_border_default</item>
+        <item name="strokeWidth">@dimen/stroke_hairline</item>
+        <item name="cardCornerRadius">@dimen/radius_lg</item>
+        <item name="cardElevation">@dimen/elevation_none</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Widget.App.Card.Surface" parent="Widget.Material3.CardView.Filled">
+        <!-- 界面层卡片背景比页面略浅，形成层次 -->
+        <item name="cardBackgroundColor">@color/dark_bg_surface</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="cardCornerRadius">@dimen/radius_lg</item>
+        <item name="cardElevation">@dimen/elevation_none</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         Chip 深色模式
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <style name="Widget.App.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="android:minHeight">@dimen/height_chip</item>
+        <item name="android:textSize">@dimen/text_label</item>
+        <item name="chipCornerRadius">@dimen/radius_pill</item>
+        <!-- 深色模式 Chip 背景用 neutral 800 -->
+        <item name="chipBackgroundColor">@color/neutral_800</item>
+        <item name="android:textColor">@color/dark_text_secondary</item>
+        <!-- 描边用浅色 -->
+        <item name="chipStrokeColor">@color/dark_border_default</item>
+        <item name="chipStrokeWidth">@dimen/stroke_hairline</item>
+        <item name="rippleColor">@color/brand_900</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         底部导航栏深色模式
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <style name="Widget.App.BottomNav" parent="Widget.Material3.BottomNavigationView">
+        <!-- 导航栏背景比页面略浅，形成浮层感 -->
+        <item name="android:background">@color/dark_bg_card</item>
+        <!-- 选中项用提亮后的品牌色 400 -->
+        <item name="itemIconTint">@color/brand_400</item>
+        <item name="itemTextColor">@color/brand_400</item>
+        <!-- 选中指示器背景：品牌 900（深色容器）        <item name="itemActiveIndicatorColor">@color/brand_900</item>-->
+
+        <item name="android:elevation">@dimen/elevation_none</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         顶部应用栏深色模式 <item name="android:background">@color/dark_bg_page</item>
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <style name="Widget.App.TopAppBar" parent="Widget.Material3.Toolbar.OnSurface">
+        <!-- 顶部栏与页面背景一致，保持沉浸感 -->
+
+        <item name="titleTextColor">@color/dark_text_primary</item>
+        <item name="android:elevation">@dimen/elevation_none</item>
+        <item name="liftOnScroll">false</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         底部弹窗 Widget 深色模式
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <style name="Widget.App.BottomSheet" parent="Widget.Material3.BottomSheet.Modal">
+        <!-- 弹窗背景比页面略浅，视觉上有浮出感 -->
+        <item name="backgroundTint">@color/dark_bg_card</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.BottomSheet</item>
+        <item name="android:elevation">@dimen/elevation_bottom_sheet</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         进度指示器深色模式
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <!-- 线性进度条：填充提亮到 400，轨道用 900 深色 -->
+    <style name="Widget.App.Progress.Linear" parent="Widget.Material3.LinearProgressIndicator">
+        <item name="indicatorColor">@color/brand_400</item>
+        <item name="trackColor">@color/brand_900</item>
+        <item name="trackCornerRadius">@dimen/radius_pill</item>
+        <item name="trackThickness">6dp</item>
+    </style>
+
+    <!-- 圆形进度条 -->
+    <style name="Widget.App.Progress.Circular" parent="Widget.Material3.CircularProgressIndicator">
+        <item name="indicatorColor">@color/brand_400</item>
+        <item name="trackColor">@color/brand_900</item>
+        <item name="trackThickness">3dp</item>
+    </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         语义状态主题覆盖深色模式
+    ══════════════════════════════════════════════════════════════════ -->
+
+    <style name="ThemeOverlay.App.Success" parent="">
+        <item name="colorPrimary">@color/success_400</item>
+        <item name="colorPrimaryContainer">@color/success_900</item>
+        <item name="colorOnPrimaryContainer">@color/success_100</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Warning" parent="">
+        <item name="colorPrimary">@color/warning_200</item>
+        <item name="colorPrimaryContainer">@color/warning_900</item>
+        <item name="colorOnPrimaryContainer">@color/warning_100</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Error" parent="">
+        <item name="colorPrimary">@color/error_400</item>
+        <item name="colorPrimaryContainer">@color/error_900</item>
+        <item name="colorOnPrimaryContainer">@color/error_100</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Info" parent="">
+        <item name="colorPrimary">@color/info_400</item>
+        <item name="colorPrimaryContainer">@color/info_900</item>
+        <item name="colorOnPrimaryContainer">@color/info_100</item>
+    </style>
+</resources>

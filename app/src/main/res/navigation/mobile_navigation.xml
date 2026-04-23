@@ -9,18 +9,94 @@
         android:id="@+id/nav_home"
         android:name="com.henryxxiao.splash.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_nav_set"
+            app:destination="@id/nav_set" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_show"
+            app:destination="@id/nav_show" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_search"
+            app:destination="@id/nav_search" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.henryxxiao.splash.ui.search.SearchFragment"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_nav_search_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_search_to_nav_show"
+            app:destination="@id/nav_show" />
+        <action
+            android:id="@+id/action_nav_search_to_nav_user"
+            app:destination="@id/nav_user" />
+        <action
+            android:id="@+id/action_nav_search_to_nav_topic"
+            app:destination="@id/nav_topic" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_show"
+        android:name="com.henryxxiao.splash.ui.show.ShowFragment"
+        tools:layout="@layout/fragment_show" >
+        <action
+            android:id="@+id/action_nav_show_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_show_to_nav_user"
+            app:destination="@id/nav_user" />
+        <action
+            android:id="@+id/action_nav_show_to_nav_search"
+            app:destination="@id/nav_search" />
+        <action
+            android:id="@+id/action_nav_show_to_nav_preset"
+            app:destination="@id/nav_preset" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_preset"
+        android:name="com.henryxxiao.splash.ui.show.PresetFragment"
+        tools:layout="@layout/fragment_preset">
+        <action
+            android:id="@+id/action_nav_preset_to_nav_show"
+            app:destination="@id/nav_show" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_user"
+        android:name="com.henryxxiao.splash.ui.user.UserFragment"
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_nav_user_to_nav_show"
+            app:destination="@id/nav_show" />
+        <action
+            android:id="@+id/action_nav_user_to_nav_search"
+            app:destination="@id/nav_search" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_topic"
+        android:name="com.henryxxiao.splash.ui.search.TopicFragment"
+        tools:layout="@layout/fragment_topic">
+        <action
+            android:id="@+id/action_nav_topic_to_nav_search"
+            app:destination="@id/nav_search" />
+        <action
+            android:id="@+id/action_nav_topic_to_nav_show"
+            app:destination="@id/nav_show" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_set"
         android:name="com.henryxxiao.splash.ui.set.SetFragment"
-        android:label="@string/menu_set"
-        tools:layout="@layout/fragment_set" />
-
-    <fragment
-        android:id="@+id/nav_about"
-        android:name="com.henryxxiao.splash.ui.about.AboutFragment"
-        android:label="@string/menu_about"
-        tools:layout="@layout/fragment_about" />
+        tools:layout="@layout/fragment_set" >
+        <action
+            android:id="@+id/action_nav_set_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 
 </navigation>

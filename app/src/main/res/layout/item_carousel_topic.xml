@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.carousel.MaskableFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="8dp"
+    app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large">
+
+    <ImageView
+        android:id="@+id/carousel_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/shape_rectangle_gradient" />
+
+    <TextView
+        android:id="@+id/carousel_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="16dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:maxLines="2"
+        android:ellipsize="end" />
+
+</com.google.android.material.carousel.MaskableFrameLayout>

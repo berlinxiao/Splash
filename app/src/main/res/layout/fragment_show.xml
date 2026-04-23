@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/show_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".ui.show.ShowFragment">
+
+    <LinearLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.henryxxiao.splash.utils.view.SquircleImageView
+            android:id="@+id/show_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/describe_show_image"
+            android:scaleType="fitXY"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <LinearLayout
+                android:id="@+id/show_linearLayout_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp">
+
+                <ImageView
+                    android:id="@+id/show_imageView_head"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/describe_show_head"
+                    android:scaleType="centerCrop"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/show_textView_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textIsSelectable="true"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="Leroy Jenkins" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/show_linearLayout_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button.Secondary"
+                    android:id="@+id/show_btn_preset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_4"
+                    android:text="@string/show_preset"
+                    app:cornerRadius="@dimen/space_8"
+                    app:icon="@drawable/ic_wallpaper" />
+
+                <com.google.android.material.button.MaterialSplitButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <com.henryxxiao.splash.utils.view.LeftSplitGlowButton
+                        android:id="@+id/show_btn_download"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/show_download"
+                        app:icon="@drawable/ic_show_download" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/show_btn_quality"
+                        android:layout_width="64dp"
+                        android:layout_height="match_parent"
+                        app:icon="@drawable/m3_split_button_chevron_avd" />
+
+                </com.google.android.material.button.MaterialSplitButton>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/show_textView_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/show_info"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/show_card_1"
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_2"
+                app:cardBackgroundColor="?attr/android:colorBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/show_text_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="October 30, 2025" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/show_date"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <View
+                        style="@style/CameraSeparator"
+                        android:layout_marginStart="@dimen/space_8"
+                        android:layout_marginEnd="@dimen/space_8" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <com.henryxxiao.splash.utils.view.LoadingTextView
+                            android:id="@+id/loadingView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/show_text_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textIsSelectable="true"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            tools:text="Zaporizhia Oblast, Ukraine"
+                            tools:visibility="visible" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/show_location"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/show_textView_statistics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/show_statistics"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/show_card_2"
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_2"
+                app:cardBackgroundColor="?attr/android:colorBackground" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <com.henryxxiao.splash.utils.view.LoadingTextView
+                            android:id="@+id/loadingView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/show_text_views"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            tools:text="920k"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/show_views"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_marginBottom="@dimen/space_6"
+                        android:background="?attr/colorOutlineVariant" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <com.henryxxiao.splash.utils.view.LoadingTextView
+                            android:id="@+id/loadingView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/show_text_downloads"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            tools:text="18k"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/show_downloads"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/show_textView_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/show_details"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/show_card_3"
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_2"
+                app:cardBackgroundColor="?attr/android:colorBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout style="@style/CameraRow">
+
+                        <TextView
+                            style="@style/CameraLabel"
+                            android:text="@string/show_camera" />
+
+                        <com.henryxxiao.splash.utils.view.LoadingTextView
+                            android:id="@+id/loadingView4"
+                            style="@style/CameraValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/show_text_camera_model"
+                            style="@style/CameraValue"
+                            android:visibility="gone"
+                            tools:text="Fujifilm X-T4"
+                            tools:visibility="visible" />
+                    </RelativeLayout>
+
+                    <View style="@style/CameraSeparator" />
+
+                    <RelativeLayout style="@style/CameraRow">
+
+                        <TextView
+                            style="@style/CameraLabel"
+                            android:text="@string/show_aperture" />
+
+                        <com.henryxxiao.splash.utils.view.LoadingTextView
+                            android:id="@+id/loadingView5"
+                            style="@style/CameraValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/show_text_aperture"
+                            style="@style/CameraValue"
+                            android:visibility="gone"
+                            tools:text="f/1.4"
+                            tools:visibility="visible" />
+                    </RelativeLayout>
+
+                    <View style="@style/CameraSeparator" />
+
+                    <RelativeLayout style="@style/CameraRow">
+
+                        <TextView
+                            style="@style/CameraLabel"
+                            android:text="@string/show_focal_length" />
+
+                        <com.henryxxiao.splash.utils.view.LoadingTextView
+                            android:id="@+id/loadingView6"
+                            style="@style/CameraValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/show_text_focal_length"
+                            style="@style/CameraValue"
+                            android:visibility="gone"
+                            tools:text="35"
+                            tools:visibility="visible" />
+                    </RelativeLayout>
+
+                    <View style="@style/CameraSeparator" />
+
+                    <RelativeLayout style="@style/CameraRow">
+
+                        <TextView
+                            style="@style/CameraLabel"
+                            android:text="@string/show_shutter_speed" />
+
+                        <com.henryxxiao.splash.utils.view.LoadingTextView
+                            android:id="@+id/loadingView7"
+                            style="@style/CameraValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/show_text_shutter"
+                            style="@style/CameraValue"
+                            android:visibility="gone"
+                            tools:text="1/4000s"
+                            tools:visibility="visible" />
+                    </RelativeLayout>
+
+                    <View style="@style/CameraSeparator" />
+
+                    <RelativeLayout style="@style/CameraRow">
+
+                        <TextView
+                            style="@style/CameraLabel"
+                            android:text="@string/show_iso" />
+
+                        <com.henryxxiao.splash.utils.view.LoadingTextView
+                            android:id="@+id/loadingView8"
+                            style="@style/CameraValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/show_text_iso"
+                            style="@style/CameraValue"
+                            android:visibility="gone"
+                            tools:text="160"
+                            tools:visibility="visible" />
+                    </RelativeLayout>
+
+                    <View style="@style/CameraSeparator" />
+
+                    <RelativeLayout style="@style/CameraRow">
+
+                        <TextView
+                            style="@style/CameraLabel"
+                            android:text="@string/show_dimensions" />
+
+                        <com.henryxxiao.splash.utils.view.LoadingTextView
+                            android:id="@+id/loadingView9"
+                            style="@style/CameraValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/show_text_dimensions"
+                            style="@style/CameraValue"
+                            android:visibility="gone"
+                            tools:text="6240 x 4160"
+                            tools:visibility="visible" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/show_tags"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:transitionName="search_transform" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

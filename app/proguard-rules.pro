@@ -106,15 +106,6 @@
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
 -dontwarn me.iwf.photopicker.adapter.**
 
-#GSON
-# Prevent proguard from stripping interface information from TypeAdapter, TypeAdapterFactory,
-# JsonSerializer, JsonDeserializer instances (so they can be used in @JsonAdapter)
--keep class * implements com.google.gson.TypeAdapter
--keep class * extends com.google.gson.TypeAdapter
--keep class * implements com.google.gson.TypeAdapterFactory
--keep class * implements com.google.gson.JsonSerializer
--keep class * implements com.google.gson.JsonDeserializer
-
 # rxjava+okhttp
 -dontwarn okhttp3.**
 -dontwarn okio.**
@@ -167,7 +158,6 @@
 
 -keep class com.airbnb** {*;}
 -keep class com.bumptech.glide** {*;}
--keep class br.com.simplepass.loadingbutton** {*;}
 -keep class com.github.chrisbanes.photoview** {*;}
 -keep class com.henryxxiao.splash.cdownload** {*;}
 -keep class androidx** {*;}

@@ -1,24 +1,460 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/set_nest"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorPrimaryDark"
     tools:context=".ui.set.SetFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/set_RecyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layoutAnimation="@anim/layout_animation_fall_down"
-        android:overScrollMode="never"
-        android:paddingStart="16dp"
-        android:paddingTop="16dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/space_4"
+        android:paddingEnd="@dimen/space_4"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.Material3.Button.IconButton"
+                android:id="@+id/set_btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                android:padding="0dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:icon="@drawable/ic_back"
+                app:iconTint="?attr/colorOnSurfaceVariant"
+                app:iconSize="@dimen/space_6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/describe_back"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_set"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            style="@style/SetTextTitle"
+            android:text="@string/set_style" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/SetCardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/SetCardViewSelect">
+
+                    <ImageView
+                        android:id="@+id/icon_daynight"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:importantForAccessibility="no"
+                        app:tint="?attr/colorSurfaceVariant"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/ic_set_dark_mode" />
+
+                    <TextView
+                        style="@style/SetTextDescription"
+                        android:text="@string/set_DayNight"
+                        app:layout_constraintStart_toEndOf="@+id/icon_daynight"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_daynight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        style="@style/Widget.Material3.CompoundButton.MaterialSwitch"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutlineVariant" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/SetCardViewSelect"
+                    android:id="@+id/languages"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/icon_language"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:importantForAccessibility="no"
+                        app:tint="?attr/colorSurfaceVariant"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/ic_set_language" />
+
+                    <TextView
+                        style="@style/SetTextDescription"
+                        android:text="@string/set_language"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/icon_language"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_language"
+                        style="@style/SetTextContent"
+                        android:text="@string/set_follow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/icon_arrow_language"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icon_arrow_language"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintBottom_toBottomOf="@+id/text_language"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/text_language"
+                        app:tint="?attr/colorOnSurfaceVariant"
+                        android:src="@drawable/ic_set_arrow" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutlineVariant" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/SetCardViewSelect"
+                    android:id="@+id/load"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/icon_load"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:importantForAccessibility="no"
+                        app:tint="?attr/colorSurfaceVariant"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/ic_set_load" />
+
+                    <TextView
+                        style="@style/SetTextDescription"
+                        android:text="@string/set_load"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/icon_load"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_load"
+                        style="@style/SetTextContent"
+                        android:text="@string/set_newest"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/icon_arrow_load"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icon_arrow_load"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintBottom_toBottomOf="@+id/text_load"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/text_load"
+                        app:tint="?attr/colorOnSurfaceVariant"
+                        android:src="@drawable/ic_set_arrow" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- STORAGE & DATA -->
+        <TextView
+            style="@style/SetTextTitle"
+            android:text="@string/set_data" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/SetCardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/SetCardViewSelect"
+                    android:id="@+id/preview"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/icon_preview"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:importantForAccessibility="no"
+                        app:tint="?attr/colorSurfaceVariant"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/ic_set_preview" />
+
+                    <TextView
+                        style="@style/SetTextDescription"
+                        android:text="@string/set_preview"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/icon_preview"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_preview"
+                        style="@style/SetTextContent"
+                        android:text="@string/set_fluent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/icon_arrow_preview"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icon_arrow_preview"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintBottom_toBottomOf="@+id/text_preview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/text_preview"
+                        app:tint="?attr/colorOnSurfaceVariant"
+                        android:src="@drawable/ic_set_arrow" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutlineVariant" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/SetCardViewSelect"
+                    android:id="@+id/download"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/icon_download"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:importantForAccessibility="no"
+                        app:tint="?attr/colorSurfaceVariant"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/ic_show_download" />
+
+                    <TextView
+                        style="@style/SetTextDescription"
+                        android:text="@string/set_download"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/icon_download"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_download"
+                        style="@style/SetTextContent"
+                        android:text="@string/set_regular"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/icon_arrow_download"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icon_arrow_download"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintBottom_toBottomOf="@+id/text_download"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/text_download"
+                        app:tint="?attr/colorOnSurfaceVariant"
+                        android:src="@drawable/ic_set_arrow" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutlineVariant" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/SetCardViewSelect"
+                    android:id="@+id/clear"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/icon_clear"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:importantForAccessibility="no"
+                        app:tint="?attr/colorSurfaceVariant"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/ic_set_clear" />
+
+                    <TextView
+                        style="@style/SetTextDescription"
+                        android:text="@string/set_clear"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/icon_clear"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_cache"
+                        style="@style/SetTextContent"
+                        android:text="@string/set_cache"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ABOUT -->
+        <TextView
+            style="@style/SetTextTitle"
+            android:text="@string/set_about" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/SetCardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/SetCardViewSelect"
+                    android:id="@+id/unsplash"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        style="@style/SetTextDescription"
+                        android:text="@string/about_explain"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:importantForAccessibility="no"
+                        android:layout_marginEnd="@dimen/space_2"
+                        android:src="@drawable/ic_about_unsplash"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="?attr/colorSurfaceVariant" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutlineVariant" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/SetCardViewSelect"
+                    android:id="@+id/version"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        style="@style/SetTextDescription"
+                        android:text="@string/set_version"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/SetTextContent"
+                        android:text="@string/app_version"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/describe_logo"
+            android:gravity="center"
+            android:src="@drawable/ic_logo"
+            app:tint="?attr/colorOnSurface" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/menu_home"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="@dimen/space_8"
+            android:text="@string/about_slogan"
+            android:gravity="center"
+            android:textColor="?attr/colorOnSurfaceVariant" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="@dimen/space_8"
+            android:visibility="gone"
+            android:gravity="center"
+            android:text="Made with ❤️ for Android\nPhoto Engine: Unsplash API"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

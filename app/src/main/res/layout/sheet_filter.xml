@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_4"
+        android:layout_marginEnd="@dimen/space_4"
+        android:layout_marginTop="@dimen/space_8"
+        android:layout_marginBottom="@dimen/space_8">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/filter_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_orderby"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/filter_group_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_2"
+            app:checkedButton="@id/filter_relevant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filter_text1"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/filter_relevant"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_relevant" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/filter_latest"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_latest" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/filter_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_6"
+            android:text="@string/search_filter_color"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filter_group_order" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/filter_group_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filter_text2"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/filter_color_bw"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_bw"
+                app:chipBackgroundColor="?attr/android:colorBackground"
+                app:chipIcon="@drawable/circle_dot"
+                app:chipIconVisible="true"
+                app:iconEndPadding="@dimen/space_2" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/filter_color_black"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_black"
+                app:chipBackgroundColor="?attr/android:colorBackground"
+                app:chipIcon="@drawable/circle_dot"
+                app:chipIconTint="@color/black"
+                app:chipIconVisible="true"
+                app:iconEndPadding="@dimen/space_2" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/filter_color_white"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_white"
+                app:chipBackgroundColor="?attr/android:colorBackground"
+                app:chipIcon="@drawable/circle_dot"
+                app:chipIconTint="@color/white"
+                app:chipIconVisible="true"
+                app:iconEndPadding="@dimen/space_2" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/filter_color_yellow"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_yellow"
+                app:chipBackgroundColor="?attr/android:colorBackground"
+                app:chipIcon="@drawable/circle_dot"
+                app:chipIconTint="@color/my_yellow"
+                app:chipIconVisible="true"
+                app:iconEndPadding="@dimen/space_2" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/filter_color_orange"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_orange"
+                app:chipBackgroundColor="?attr/android:colorBackground"
+                app:chipIcon="@drawable/circle_dot"
+                app:chipIconTint="@color/my_orange"
+                app:chipIconVisible="true"
+                app:iconEndPadding="@dimen/space_2" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/filter_color_red"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_red"
+                app:chipBackgroundColor="?attr/android:colorBackground"
+                app:chipIcon="@drawable/circle_dot"
+                app:chipIconTint="@color/my_red"
+                app:chipIconVisible="true"
+                app:iconEndPadding="@dimen/space_2" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/filter_color_purple"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_purple"
+                app:chipBackgroundColor="?attr/android:colorBackground"
+                app:chipIcon="@drawable/circle_dot"
+                app:chipIconTint="@color/my_purple"
+                app:chipIconVisible="true"
+                app:iconEndPadding="@dimen/space_2" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/filter_color_magenta"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_magenta"
+                app:chipBackgroundColor="?attr/android:colorBackground"
+                app:chipIcon="@drawable/circle_dot"
+                app:chipIconTint="@color/my_magenta"
+                app:chipIconVisible="true"
+                app:iconEndPadding="@dimen/space_2" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/filter_color_green"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_green"
+                app:chipBackgroundColor="?attr/android:colorBackground"
+                app:chipIcon="@drawable/circle_dot"
+                app:chipIconTint="@color/my_green"
+                app:chipIconVisible="true"
+                app:iconEndPadding="@dimen/space_2" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/filter_color_teal"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_teal"
+                app:chipBackgroundColor="?attr/android:colorBackground"
+                app:chipIcon="@drawable/circle_dot"
+                app:chipIconTint="@color/my_teal"
+                app:chipIconVisible="true"
+                app:iconEndPadding="@dimen/space_2" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/filter_color_blue"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_blue"
+                app:chipBackgroundColor="?attr/android:colorBackground"
+                app:chipIcon="@drawable/circle_dot"
+                app:chipIconTint="@color/my_blue"
+                app:chipIconVisible="true"
+                app:iconEndPadding="@dimen/space_2" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/filter_text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_6"
+            android:text="@string/search_orientation"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filter_group_color" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/filter_group_orientation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filter_text3"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/filter_landscape"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_landscape" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/filter_portrait"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_portrait" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/filter_squarish"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_filter_squarish" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/filter_confirm_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_6"
+            android:text="@string/set_confirm"
+            app:cornerRadius="@dimen/space_6"
+            app:layout_constraintEnd_toEndOf="@+id/filter_group_orientation"
+            app:layout_constraintStart_toStartOf="@+id/filter_group_orientation"
+            app:layout_constraintTop_toBottomOf="@+id/filter_group_orientation" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/filter_cancel_button"
+            style="@style/Widget.App.Button.Secondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/set_cancel"
+            app:cornerRadius="@dimen/space_6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/filter_confirm_button"
+            app:layout_constraintStart_toStartOf="@+id/filter_confirm_button"
+            app:layout_constraintTop_toBottomOf="@+id/filter_confirm_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

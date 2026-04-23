@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ======================================================= -->
+    <!-- 间距刻度 — 4dp 基础网格 -->
+    <!-- 所有值都是 4dp 的倍数 -->
+    <!-- 使用这些而不是硬编码任何边距/内边距 -->
+    <!-- ======================================================= -->
+    <dimen name="space_1">4dp</dimen> <!-- 图标与文字间距，紧凑的内联 -->
+    <dimen name="space_2">8dp</dimen> <!-- 组件内元素之间 -->
+    <dimen name="space_3">12dp</dimen> <!-- 紧凑的组件内边距 -->
+    <dimen name="space_4">16dp</dimen> <!-- 标准卡片内边距，列表项间距 -->
+    <dimen name="space_5">20dp</dimen> <!-- 放松的组件内边距 -->
+    <dimen name="space_6">24dp</dimen> <!-- 屏幕内部分间距 -->
+    <dimen name="space_8">32dp</dimen> <!-- 主要部分之间 -->
+    <dimen name="space_12">48dp</dimen> <!-- 屏幕级垂直节奏 -->
+    <dimen name="space_16">64dp</dimen> <!-- 主体间距，大屏幕断点 -->
+
+    <!-- ======================================================= -->
+    <!--  COMPONENT PADDING   组件内边距                  -->
+    <!-- ======================================================= -->
+    <dimen name="padding_button_horizontal">20dp</dimen>
+    <dimen name="padding_button_vertical">10dp</dimen>
+
+    <dimen name="padding_card">16dp</dimen>         <!-- standard card inner padding -->
+    <dimen name="padding_card_relaxed">20dp</dimen> <!-- spacious card variant -->
+
+    <dimen name="padding_input_horizontal">14dp</dimen>
+    <dimen name="padding_input_vertical">10dp</dimen>
+
+    <dimen name="padding_chip_horizontal">12dp</dimen>
+    <dimen name="padding_chip_vertical">4dp</dimen>
+
+    <dimen name="padding_badge_horizontal">8dp</dimen>
+    <dimen name="padding_badge_vertical">2dp</dimen>
+
+    <dimen name="padding_list_item_horizontal">16dp</dimen>
+    <dimen name="padding_list_item_vertical">12dp</dimen>
+
+    <dimen name="padding_bottom_sheet">24dp</dimen>
+    <dimen name="padding_dialog">24dp</dimen>
+    <dimen name="padding_screen_horizontal">16dp</dimen>  <!-- safe horizontal margin -->
+
+    <!-- ======================================================= -->
+    <!-- 组件高度 -->
+    <!-- 根据无障碍规则，触控目标必须 ≥ 48dp。 -->
+    <!-- ======================================================= -->
+    <dimen name="height_button_default">48dp</dimen> <!-- 主按钮 / 次按钮 -->
+    <dimen name="height_button_small">36dp</dimen> <!-- 紧凑型 / 内联按钮 -->
+    <dimen name="height_button_large">56dp</dimen> <!-- 大型 CTA，例如底部栏操作 -->
+
+    <dimen name="height_input_default">52dp</dimen> <!-- 文本字段、下拉框、选择器 -->
+    <dimen name="height_input_small">44dp</dimen> <!-- 紧凑表单行 -->
+
+    <dimen name="height_chip">32dp</dimen> <!-- 过滤 / 建议 Chip -->
+    <dimen name="height_tab">48dp</dimen> <!-- 标签栏 -->
+    <dimen name="height_bottom_nav">64dp</dimen> <!-- 底部导航栏 -->
+    <dimen name="height_top_app_bar">56dp</dimen> <!-- 标准顶部应用栏 -->
+    <dimen name="height_top_app_bar_large">152dp</dimen> <!-- 大型 / 展开顶部应用栏 -->
+    <dimen name="height_divider">1dp</dimen>
+
+    <!-- Minimum touch target (accessibility)最小触控目标（可访问性） -->
+    <dimen name="touch_target_min">48dp</dimen>
+
+    <!-- ======================================================= -->
+    <!--  COMPONENT WIDTHS  组件宽度                               -->
+    <!-- ======================================================= -->
+    <dimen name="width_icon_small">16dp</dimen>    <!-- inline text icon -->
+    <dimen name="width_icon_default">24dp</dimen>  <!-- standard icon -->
+    <dimen name="width_icon_large">32dp</dimen>    <!-- emphasis icon -->
+
+    <dimen name="width_avatar_small">32dp</dimen>
+    <dimen name="width_avatar_default">44dp</dimen>
+    <dimen name="width_avatar_large">64dp</dimen>
+
+    <dimen name="max_content_width">680dp</dimen>  <!-- readable column — 60–75 chars equivalent -->
+
+    <!-- ======================================================= -->
+    <!--  CORNER RADIUS                                          -->
+    <!-- ======================================================= -->
+    <dimen name="radius_xs">4dp</dimen>    <!-- inputs, small tags, badges -->
+    <dimen name="radius_sm">8dp</dimen>    <!-- buttons, chips, inner components -->
+    <dimen name="radius_md">10dp</dimen>   <!-- cards, dialogs, bottom sheets -->
+    <dimen name="radius_lg">14dp</dimen>   <!-- large cards, hero surfaces -->
+    <dimen name="radius_xl">20dp</dimen>   <!-- modal containers, feature cards -->
+    <dimen name="radius_pill">999dp</dimen> <!-- fully rounded — avatars, toggles, pills -->
+
+    <!-- ======================================================= -->
+    <!--  BORDER / STROKE                                        -->
+    <!-- ======================================================= -->
+    <dimen name="stroke_hairline">0.5dp</dimen>  <!-- subtle card/divider border -->
+    <dimen name="stroke_default">1dp</dimen>     <!-- standard border -->
+    <dimen name="stroke_emphasis">2dp</dimen>    <!-- focused input, selected card outline -->
+    <dimen name="stroke_focus_ring">2dp</dimen>  <!-- accessibility focus indicator offset -->
+
+    <!-- ======================================================= -->
+    <!--  TYPOGRAPHY                                             -->
+    <!--  Use sp (scale-independent pixels) for all text sizes. -->
+    <!--  Only 2 font weights: 400 regular, 500 medium.         -->
+    <!-- ======================================================= -->
+
+    <!-- Display -->
+    <dimen name="text_display">36sp</dimen>
+
+    <!-- Headings -->
+    <dimen name="text_h1">28sp</dimen>
+    <dimen name="text_h2">22sp</dimen>
+    <dimen name="text_h3">18sp</dimen>
+
+    <!-- Body -->
+    <dimen name="text_body_large">17sp</dimen>   <!-- relaxed reading -->
+    <dimen name="text_body">15sp</dimen>         <!-- default body copy -->
+    <dimen name="text_body_small">13sp</dimen>   <!-- secondary / meta text -->
+
+    <!-- UI labels -->
+    <dimen name="text_button">14sp</dimen>
+    <dimen name="text_label">13sp</dimen>        <!-- form labels, section headers -->
+    <dimen name="text_caption">12sp</dimen>      <!-- timestamps, footnotes -->
+    <dimen name="text_badge">11sp</dimen>        <!-- status chips, tags -->
+    <dimen name="text_overline">11sp</dimen>     <!-- all-caps section markers -->
+
+    <!-- Minimum readable text size — never go below this -->
+    <dimen name="text_min">11sp</dimen>
+
+    <!-- 行高辅助（与 lineSpacingExtra 或 lineSpacingMultiplier 一起使用） -->
+    <!-- 行高 = 文字大小 × 倍数；在样式中设置 lineSpacingMultiplier -->
+    <!-- display: 1.1 | h1: 1.2 | h2–h3: 1.3–1.4 | body: 1.6 | caption: 1.5 -->
+
+    <!-- ======================================================= -->
+    <!-- 高程（Material You / 阴影深度） -->
+    <!-- 要谨慎使用 — 仅用于悬浮 / 覆盖表面。 -->
+    <!-- ======================================================= -->
+    <dimen name="elevation_none">0dp</dimen>
+    <dimen name="elevation_card">1dp</dimen>       <!-- subtle card lift -->
+    <dimen name="elevation_menu">4dp</dimen>       <!-- dropdown, context menu -->
+    <dimen name="elevation_bottom_sheet">8dp</dimen>
+    <dimen name="elevation_dialog">16dp</dimen>
+    <dimen name="elevation_snackbar">6dp</dimen>
+    <dimen name="elevation_fab">6dp</dimen>
+    <dimen name="elevation_tooltip">4dp</dimen>
+
+    <!-- ======================================================= -->
+    <!--  ICON SIZES                                             -->
+    <!-- ======================================================= -->
+    <dimen name="icon_xs">12dp</dimen>    <!-- badge / indicator dot context -->
+    <dimen name="icon_sm">16dp</dimen>    <!-- inline with body text (15–17sp) -->
+    <dimen name="icon_md">24dp</dimen>    <!-- standard nav / action icon -->
+    <dimen name="icon_lg">32dp</dimen>    <!-- feature icons, empty states -->
+    <dimen name="icon_xl">48dp</dimen>    <!-- hero / onboarding illustrations -->
+
+    <!-- ======================================================= -->
+    <!--  GRID & LAYOUT                                         -->
+    <!-- ======================================================= -->
+    <dimen name="grid_column_gap">12dp</dimen>   <!-- gap between grid columns -->
+    <dimen name="grid_row_gap">12dp</dimen>      <!-- gap between grid rows -->
+    <dimen name="grid_margin">16dp</dimen>       <!-- outer screen margin -->
+    <dimen name="grid_margin_tablet">24dp</dimen>
+
+    <!-- ======================================================= -->
+    <!--  BOTTOM NAVIGATION & NAVIGATION RAIL                   -->
+    <!-- ======================================================= -->
+    <dimen name="bottom_nav_icon_size">24dp</dimen>
+    <dimen name="bottom_nav_label_padding_top">4dp</dimen>
+    <dimen name="nav_rail_width">80dp</dimen>
+    <dimen name="nav_rail_width_expanded">256dp</dimen>
+
+    <!-- ======================================================= -->
+    <!--  ANIMATION DURATIONS                                    -->
+    <!--  Use integers (ms) in code; kept here for reference.   -->
+    <!--  enter: 200–250ms ease-out | exit: 150–200ms ease-in   -->
+    <!-- ======================================================= -->
+    <!-- Reference values — use in Java/Kotlin as integer literals:
+         val ANIM_SHORT  = 150  // exit transitions
+         val ANIM_MEDIUM = 200  // enter transitions (most common)
+         val ANIM_LONG   = 300  // complex layout changes, page transitions
+         val ANIM_EXTRA  = 500  // skeleton shimmer cycle half-period
+    -->
+</resources>

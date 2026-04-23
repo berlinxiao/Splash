@@ -10,5 +10,5 @@
         android:topLeftRadius="25dp"
         android:topRightRadius="25dp" />
     <!-- 填充的颜色 -->
-    <solid android:color="?attr/ShowShape" />
+    <solid android:color="?attr/colorOnPrimary" />
 </shape>
